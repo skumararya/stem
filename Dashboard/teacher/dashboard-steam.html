@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Dashboard</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/material.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+	.zoo-detail-heading {
+    color: #034a8a;
+    font-size: 16px;
+    font-family: 'robotomedium';
+    margin: 15px;
+	}
+	.quarter-reprt-table.table>tbody>tr:last-child td{border-top:1px solid #dee2e6;} 
+	.quarter-reprt-table tbody tr td span{display:block;min-height:25px;margin-bottom:4px;}
+	.quarter-reprt-table tbody tr td input{
+		box-shadow: 0 0 5px 1px #dadada;
+		height: 25px;
+		padding: 5px 10px;
+		font-size: 14px;margin-bottom:4px;
+	}
+	.dashboard-card{
+		border-radius:18px;
+		box-shadow:0 8px 25px rgba(0,0,0,0.08);
+		padding:20px;
+		background:#fff;
+	}
+	.chart-height{
+		height:300px;
+	}
+	.donut-height{
+		height:300px;
+	}
+	.total-center{
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		text-align:center;
+	}
+	.total-center h4{
+		margin:0;
+		font-weight:600;
+	}
+	.total-center span{
+		font-size:13px;
+		color:#888;
+	}
+	.dashboard-card h5 {
+		font-size: 18px;
+		font-weight: 600;
+		margin: 0;
+	}
+	.dashboard-card .gap-3 {
+		gap: 5px;
+	}
+	.form-select {
+		border-radius: 4px;
+		border: 1px solid #ddd;
+		padding: 2px 10px;
+		font-size: 14px;
+	}
+	.badge.bg-primary {
+		background-color: #ffffff00 !important;
+		color: #034a8a;
+		font-weight: normal;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		gap: 5px;
+		border: 1px solid #034a8a;
+		    margin: auto;
+	}
+	.badge.bg-primary:hover {color: #fff;}
+	</style>
+
+</head>
+
+<body>
+
+    <div class="content-wraper">
+	<div class="header-sec">
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-xl-6">
+				<div class="logo-wrap">
+					<div class="logo-img"><img src="img/logo.svg" alt="logo"></div>
+					<!-- <div class="logo-text">XYZ </div> -->
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-xl-6 header-right">
+				<div class="dash-top">
+				 <div class="row justify-content-lg-end">
+				 	
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 Profile-sec">
+						<ul>
+						
+						<!-- <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li> -->
+						<li class="user-profile">
+						
+						<span class="user-name">Stem</span>
+						<!-- <span class="profille-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span> -->
+						<span class="user-img notification"><i class="mdi mdi-bell-outline" aria-hidden="true"></i> <span class="">1</span></span>
+						<ul class="changepassword">
+							<li><a href="#">Profile</a></li>
+							<li><a href="../../Login/login.html">Logout</a></li>
+						</ul>
+						</li>
+						</ul>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="dashboard-content-sec">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">               
+                <li class="actv">
+                    <a href="dashboard-steam.html"><i class="fa fa-tachometer" aria-hidden="true"></i><span class="nav-label">Dashboard</span> </a>                   
+                </li>
+				<li>
+                    <a href="create-scholl-list.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="nav-label">Schools</span> </a>                   
+                </li>
+				
+				<li>
+                    <a href="#"><i class="fa fa-microphone" aria-hidden="true"></i><span class="nav-label">Records</span> </a>                   
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="nav-label">Statistics</span> </a>                   
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="nav-label">Settings</span> </a>                   
+                </li>
+				
+            </ul>
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+       
+			<!-- form section -->
+			<div class="wrapper-white">
+			 <div class=" dashboard-top">
+				<!-- top section -->
+
+				<ul class="breadcum nav" role="tablist">
+				<li class="dashboard-heading w-25">Dashboard</li>
+				<li class="date-time w-75 text-right  ">
+					<button class="newyellowbtn" onclick="location.href='create-school.html'"><span class="mdi mdi-plus-circle"></span> Create School</button>
+				</li>
+					 
+ 	
+				</ul>
+				</div>
+				
+				<div >
+									<div >
+									 <div class="admin-content-sec">
+				 
+ 
+				<!--demo sec-->
+
+				<div class="boards">
+		<div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+          <div class="board_section row">
+			  <!--<div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1">
+			     <div class="minidash gradiant1 radius">
+             <h6>Total School Assigned</h6>  
+             <h2>40</h2>
+             <div class="circlebx">
+                <img src="img/b1.png" class="img-fluid">
+             </div> 
+              
+           </div>
+
+			  </div> -->
+			  <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1">
+			     <div class="minidash gradiant2 radius">
+             <h6>Total Schools</h6>  
+             <h2>120</h2>
+             <div class="circlebx">
+                <img src="img/b2.png" class="img-fluid">
+             </div> 
+              
+           </div>
+			  </div>
+			  <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1">
+			      <div class="minidash gradiant3 radius">
+             <h6>Total Active Schools</h6>  
+             <h2>190</h2>
+             <div class="circlebx">
+                <img src="img/b3.png" class="img-fluid">
+             </div> 
+			  </div>
+      </div>
+	   <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1">
+			      <div class="minidash gradiant1 radius">
+             <h6>Total Draft Schools</h6>  
+             <h2>190</h2>
+             <div class="circlebx">
+                <img src="img/b3.png" class="img-fluid">
+             </div> 
+			  </div>
+      </div>
+					
+			  
+          </div>
+        </div>
+		  
+		  
+
+
+
+			    <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-1 examsec newtab"> 
+			    	<h3>School List</h3>
+			  
+<div class="dashboard-card">
+
+    <!-- Heading -->
+  
+
+    <!-- Header Row -->
+    <div class="row fw-semibold text-muted mb-2 px-3">
+        <div class="col-md-3">School Name</div>
+        <div class="col-md-2">City</div>
+        <div class="col-md-2">Total Students</div>
+        <div class="col-md-2">Active Courses</div>
+        <div class="col-md-2 text-center">Status</div>
+        <div class="col-md-1 text-center">Action</div>
+    </div>
+
+    <!-- School 1 -->
+    <div class="proficiency-card bg-light-blue">
+        <div class="row align-items-center">
+
+            <div class="col-md-3 d-flex align-items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=5" class="avatar">
+                <div>Delhi Public School</div>
+            </div>
+
+            <div class="col-md-2">Delhi</div>
+
+            <div class="col-md-2">1200</div>
+
+            <div class="col-md-2">12</div>
+
+            <div class="col-md-2 text-center">
+                <span class="badge bg-success">Active</span>
+            </div>
+
+            <div class="col-md-1 text-center">
+                <button class="nobg" onclick="location.href='create-school.html'"><span class="mdi mdi-pencil"></span></button>
+												<span class="mdi mdi-eye"></span>
+												<span class="mdi mdi-delete"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- School 2 -->
+    <div class="proficiency-card bg-light-yellow">
+        <div class="row align-items-center">
+
+            <div class="col-md-3 d-flex align-items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=6" class="avatar">
+                <div>Kendriya Vidyalaya</div>
+            </div>
+
+            <div class="col-md-2">Noida</div>
+
+            <div class="col-md-2">950</div>
+
+            <div class="col-md-2">9</div>
+
+            <div class="col-md-2 text-center">
+                <span class="badge bg-warning text-dark">Pending</span>
+            </div>
+
+            <div class="col-md-1 text-center">
+                <button class="nobg" onclick="location.href='create-school.html'"><span class="mdi mdi-pencil"></span></button>
+												<span class="mdi mdi-eye"></span>
+												<span class="mdi mdi-delete"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- School 3 -->
+    <div class="proficiency-card bg-light-green">
+        <div class="row align-items-center">
+
+            <div class="col-md-3 d-flex align-items-center gap-3">
+                <img src="https://i.pravatar.cc/80?img=7" class="avatar">
+                <div>St. Mary's School</div>
+            </div>
+
+            <div class="col-md-2">Ghaziabad</div>
+
+            <div class="col-md-2">780</div>
+
+            <div class="col-md-2">7</div>
+
+            <div class="col-md-2 text-center">
+                <span class="badge bg-success">Active</span>
+            </div>
+
+            <div class="col-md-1 text-center">
+               <button class="nobg" onclick="location.href='create-school.html'"><span class="mdi mdi-pencil"></span></button>
+												<span class="mdi mdi-eye"></span>
+												<span class="mdi mdi-delete"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-sec mt-3">
+        <ul>
+            <li><span class="mdi mdi-chevron-left"></span></li>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li><span class="mdi mdi-chevron-right"></span></li>
+        </ul>
+    </div>
+
+</div>
+
+			 
+      </div>
+      </div>
+       
+      
+ 
+ 
+	   
+    </div>					 	
+
+									 	<!--demo sec-->
+
+
+
+ 
+											<!-- <div class="text-center mt-4 mb-2"><button class="yelow-btn"><span class="mdi mdi-file-cloud"></span>Save</button></div> -->
+										</div>
+									</div>
+									<div  >
+									
+									</div>
+									 
+				</div>
+				
+				
+				
+					
+			</div>
+			
+			<footer class="footer-sec">© Steam 2026 | All right reserved.</footer>  
+			<!-- form section -->
+			
+			
+			
+		
+		
+				</div>
+			</div>
+		</div>
+          
+		   
+            
+
+     
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.metisMenu.js"></script>
+    <script src="js/custom.js"></script>
+	<script src="js/chart.js"></script>	
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	// =====================
+	// Stacked Bar Chart
+	// =====================
+	new Chart(document.getElementById('barChart'), {
+		type: 'bar',
+		data: {
+			labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+			datasets: [
+				{
+					label: 'Robotics',
+					data: [35,45,22,48,20,18,17,8,40,22,10,20],
+					backgroundColor: '#2f6fed'
+				},
+				{
+					label: 'Coding',
+					data: [15,12,22,18,14,16,6,22,12,25,35,24],
+					backgroundColor: '#22c55e'
+				},
+				{
+					label: 'AI Fundamentals',
+					data: [14,20,15,25,30,20,12,27,15,12,45,30],
+					backgroundColor: '#38bdf8'
+				},
+				{
+					label: 'Computational Thinking',
+					data: [14,20,15,25,30,20,12,27,15,12,45,30],
+					backgroundColor: '#fd7e14'
+				}
+			]
+		},
+		options: {
+			responsive:true,
+			maintainAspectRatio:false,
+			scales:{
+				x:{ stacked:true, grid:{display:false}},
+				y:{ stacked:true, beginAtZero:true }
+			},
+			plugins:{
+				legend:{
+					position:'top',
+					labels:{
+						usePointStyle:true,
+						boxWidth:8
+					}
+				}
+			}
+		}
+	});
+
+	// =====================
+	// Donut Chart
+	// =====================
+	new Chart(document.getElementById('donutChart'), {
+		type: 'doughnut',
+		data: {
+			labels: ['Today Present', 'Today Absent'],
+			datasets: [{
+				data: [90, 30],
+				backgroundColor: ['#3b3f9c', '#f59e0b'],
+				borderWidth:0
+			}]
+		},
+		options: {
+			responsive:true,
+			maintainAspectRatio:false,
+			cutout:'85%',
+			plugins:{
+				legend:{
+					position:'bottom',
+					labels:{
+						usePointStyle:true,
+						boxWidth:8
+					}
+				}
+			}
+		}
+	});
+
+});
+</script>
+
+</body>
+
+</html>

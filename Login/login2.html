@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Register</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f4f6f9;
+}
+.loginWrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginBox {
+    background: #fff;
+    width: 900px;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.loginFields {
+    width: 50%;
+    padding: 40px;
+}
+.loginImg {
+    width: 50%;
+}
+.loginImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.loginBtn {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.registerBtn {
+    cursor: pointer;
+    color: #0d6efd;
+    margin-left: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="loginWrap">
+  <div class="loginBox">
+
+    <!-- Left Login Section -->
+    <div class="loginFields">
+      <h3 class="mb-4">Login</h3>
+
+      <form id="loginForm">
+        <div class="mb-3">
+          <label>Username</label>
+          <input type="text" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label>Password</label>
+          <input type="password" class="form-control" required>
+        </div>
+
+        <button type="submit" class="loginBtn">Login</button>
+
+        <span class="registerBtn" data-bs-toggle="modal" data-bs-target="#registerModal">
+            Register
+        </span>
+      </form>
+    </div>
+
+    <!-- Right Image -->
+    <div class="loginImg">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="">
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= REGISTER MODAL ================= -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="registerForm">
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label>First Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Middle Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Last Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Mobile</label>
+              <input type="text" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label>Address</label>
+            <textarea class="form-control"></textarea>
+          </div>
+
+          <button type="submit" class="loginBtn">Submit Registration</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= SUCCESS MODAL ================= -->
+<div class="modal fade" id="successModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <h4 class="text-success">Registration Successful!</h4>
+        <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= JS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Close register modal
+    var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+    registerModal.hide();
+
+    // Show success modal
+    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+
+    // Reset form
+    this.reset();
+});
+</script>
+
+</body>
+</html>

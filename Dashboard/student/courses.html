@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Courses</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png"> -->
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/datatables.min.css">
+  <link type="text/css" href="css/style.css" rel="stylesheet" />
+  <link type="text/css" href="css/material-symbols-outlined.css" rel="stylesheet" />
+  <link type="text/css" href="css/bootstrap-icons.min.css" rel="stylesheet" />
+</head>
+
+<body class="noJS dashboard-page">
+ <header class="navbar_custom">
+    <div class="container-fluid">
+      <div class="navbar navbar-expand-xl  ">
+        <div class="inner_header_registration">
+          <a class="logo-align" href="dashboard.html">
+            <div class="brand-img">
+              <img src="images/logo.svg" alt="Logo">
+            </div>
+            
+          </a>
+        </div>
+        <div class="brand-name">
+          <a href="#" class="menu-toggle menu_sidebar_box"><span class="material-symbols-outlined bx-menu">menu</span></a>
+           
+        </div>
+        <div class="right_section fordesktop">
+          <div role="button" class="btn-sec">
+            <a href="#" class="notifications_unread"><span class="material-symbols-outlined">notifications_unread</span></a>
+            <a href="#" class="mail_unread"><span class="material-symbols-outlined">mail</span></a>
+          </div>
+          <div class="dropdown profile_dropdown">
+            <div role="button" class="user_logIn- " data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="profile">
+                <img src="./images/profile.png" alt="profile">
+              </div>
+              <div class="name_user">
+                <h5>Mr. Rohit Kumar</h5>
+                <p>Student</p>
+              </div>
+              <span class="material-symbols-outlined mt-3">keyboard_arrow_down</span>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><span class="material-symbols-outlined">
+                    account_circle
+                  </span>Profile</a></li>
+              <li><a class="dropdown-item" href="#"><span class="material-symbols-outlined">
+                    settings_b_roll
+                  </span>Setting</a></li>
+              <li><a class="dropdown-item" href="../../Login/login.html"><span class="material-symbols-outlined">
+                    chip_extraction
+                  </span>
+                  Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header end  -->
+
+  <!-- start main  -->
+  <main class="cd__main">
+    <div class='dashboard'>
+      <div class="sidebar sidebar_custom" id="sidebar2">
+        <!-- sidemenu  -->
+        <div id="dco-sidebar">
+          <div class="main-menu-sec">
+            <ul class="nav-links main-menu">
+              <li>
+                <div class="icon-link">
+                  <a href="dashboard.html">
+                    <span class="material-symbols-outlined">speed</span>
+                    <span class="link_name">Dashboard</span>
+                  </a>
+                </div>
+                <!-- Optional sub-menu only for collapsed view -->
+                <ul class="sub-menu">
+                  <li class="link_name"><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+              </li> 
+              <li>
+                <div class="icon-link">
+                  <a href="courses.html">
+                    <span class="material-symbols-outlined">book_2</span>
+                    <span class="link_name">Courses</span>
+                  </a>
+                </div>
+                <!-- Optional sub-menu only for collapsed view -->
+                <ul class="sub-menu">
+                  <li class="link_name"><a href="courses.html">Courses</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="icon-link">
+                  <a href="#" class="menu-toggle">
+                    <span class="material-symbols-outlined">person_play</span>
+                    <span class="link_name">Activities </span>
+                  </a>
+                </div>
+                <!-- Optional sub-menu only for collapsed view -->
+                <ul class="sub-menu">
+                  <li class="link_name"><a href="#">Activities</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="icon-link">
+                  <a href="#" class="menu-toggle">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="link_name">Settings</span>
+                  </a>
+                </div>
+                <!-- Optional sub-menu only for collapsed view -->
+                <ul class="sub-menu">
+                  <li class="link_name"><a href="#">Phased-I Deemed Applications</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>          
+        </div>
+        <!-- Edn sidemenu  -->
+      </div>
+      <div class='dashboard-app main-content home-section'>
+        <div class='dashboard-content'>
+          <div class="upper_banner-text">
+            <div class="container-fluid">
+              <div class="top_content">
+                <h4>Courses</h4>                
+                <div class="btn-sec">
+                  <!-- <input type="date" id="myDate" placeholder="11 Feb 2026"> -->
+                  <button type="button" class="btn quick-btn back-btn" onclick="history.back()"><span class="material-symbols-outlined">arrow_left_alt</span> Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container-fluid spacing_gap overflow-sec">
+
+            <div class="our-courses-sec">
+              <ul class="nav nav-pills" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#home" aria-selected="true" role="tab">Session 1</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#menu1" aria-selected="false" tabindex="-1" role="tab">Session 2</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#menu2" aria-selected="false" tabindex="-1" role="tab">Session 3</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#menu3" aria-selected="false" tabindex="-1" role="tab">Session 4</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="our-courses-slider">
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="menu1" role="tabpanel">
+                    <div class="our-courses-slider">
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="menu2" role="tabpanel">
+                    <div class="our-courses-slider">
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="menu3" role="tabpanel">
+                    <div class="our-courses-slider">
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-1.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Robotics &amp; AI Fundamentals</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-2.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">Coding &amp; Computational Thinking</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card-sec">
+                        <div class="img-sec">
+                          <img src="images/our-courses-3.png" alt="">
+                        </div>
+                        <div class="desc-sec">
+                          <a href="#" class="title">STEM Skill Development</a>
+                         
+                          <a href="#" class="btn quick-btn green-btn">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>          
+        </div>
+      </div>
+    </div>
+      <!-- Footer Top Section Start -->
+      <footer>
+        <div class="footer-top-sec">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="footer-nav-sec">
+                  <p>Content Provided and Maintained by Steam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer Top Section End -->
+  </main>
+  <!-- End main  -->
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/datatables.min.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/percent.js"></script>
+  <script src="js/Animated.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>
