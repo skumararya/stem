@@ -1,0 +1,226 @@
+/* Mobile Screen CSS Start */
+@media (max-width: 767px) {
+	/* Header Section css Start */
+	header.header_section{position:relative}
+	header.header_section.is-sticky{position:initial}
+	.flex_item_box-inner_login_btn{gap:15px;position:absolute;top:0;bottom:0;right:12px;margin:auto}
+	.quick-btn{padding:9px 15px;}
+	/* Main Menu Section CSS Start */
+	.nav_bg_cusotom .navbar-collapse{position:fixed;top:0;right:-100%;z-index:9999;border-top:none;border-bottom:none;color:#212529;outline:0;border-top-left-radius:12px;border-bottom-left-radius:12px;box-shadow:-4px 4px 12px 0 rgba(0, 0, 0, .25);background:#fff;width:0px!important;height:100vh;display:block;padding:1rem;transition:all .15s ease-in-out}
+	.nav_bg_cusotom .navbar-collapse.show{width:100%!important;right:0}
+	.nav_bg_cusotom .navbar-collapse button.btn-close{display:block!important;margin:auto 0 auto auto}
+	.navbar-expand-lg .navbar-nav{gap:1px;margin-top:10px;height:87vh;overflow-y:auto;overflow-x:hidden}
+	.nav_bg_cusotom .home_menu_items{justify-content:space-between}
+	.nav_bg_cusotom .dropdown-menu{width:100%!important}
+	/* Banner Section CSS Start */
+	.banner-sec .banner-details{order:2}
+	.banner-sec{padding:25px 0 25px}
+	.banner-sec .all_heading{font-size:2rem;margin-bottom:10px}
+	.banner-sec p{font-size:.875rem;margin:0 0 15px}
+	/* Counter Section CSS Start */
+	.counter-sec{padding:25px 0}
+	.counter-slider{grid-template-columns:1fr 1fr;gap:20px}
+	.counter-slider .items_custom{width:100%;text-align:center}
+	.counter-slider .items_custom:before{width:100%;height:1px;top:initial;bottom:-12px}
+	.counter-slider .items_custom .counter{font-size:28px}
+	.counter-slider .items_custom .title{font-size:.875rem}
+	/* About Us Section CSS Start */
+	.about-sec{padding:25px 0}
+	.all_heading{font-size:1.5rem;margin-bottom:8px}
+	.about-sec p{margin-bottom:10px;font-size:.875rem}
+	.video-play{width:40px;height:40px}
+	.video-play .material-symbols-outlined{font-size:24px}
+	/* Our Services Section CSS Start */
+	.our-services-sec{padding:25px 0}
+	.our-services-box{margin-bottom:15px}
+	.our-services-box li{width:100%}
+	/* Our Courses Section CSS Start */
+	.our-courses-sec{padding:25px 0}
+	.our-courses-slider{grid-template-columns:1fr;gap:15px;margin-bottom:15px}
+	.our-courses-sec .card-sec .img-sec img{height:auto}
+	.our-courses-sec .card-sec .desc-sec{padding:15px 50px 15px 15px}
+	.our-courses-sec .card-sec .desc-sec .title{font-size:1rem;min-height:auto}
+	.our-courses-sec .card-sec .desc-sec .rating{margin:5px 0 15px}
+	/* Events & Engagements Section CSS Start */
+	.events-engagements-sec{padding:25px 0 0}
+	.events-engagements-sec .z-index.mt-5{margin-top:15px!important}
+	.events-engagements-sec .heading-sec{margin:0!important}
+	.heading-sec p{margin-bottom:10px;font-size:.875rem}
+	.events-engagements-sec .card-sec .img-sec img{height:auto}
+	/* Clients & Impact Section CSS Start */
+	.clients-impact-sec{padding:75px 0 25px}
+	.clients-impact-sec .pe-0{padding-right:12px!important}
+	.clients-impact-sec .ps-0{padding-left:12px!important}
+	.testimonials{padding:15px 15px}
+	.testimonials .testimonials-box{font-size:.875rem;line-height:24px}
+	.testimonials .btn-sec.mt-5{margin-top:25px!important}
+	/* Gov Logo Section CSS Start */
+	.gov-logo-sec{padding:0px 0 25px}
+	.gov-logo-sec .nav-pills{flex-wrap:wrap;gap:15px;margin-top:0}
+	/* Office Locations Section CSS Start */
+	.office-locations-sec{padding:0 0 25px}
+	.office-locations-sec .container{margin-bottom:0}
+	.office-locations-sec .row{margin:auto}
+	.heading-bg:before,.heading-bg:after{display:none}
+	.office-locations-sec .heading-sec{padding:15px 8px}
+	.office-locations-sec .location_icon{gap:15px 30px;justify-content:center;padding:15px 0;flex-wrap:wrap}
+	/* Footer Section CSS Start */
+	.footer-sec{padding:25px 0px 20px}
+	.chat-box button .material-symbols-outlined{width:45px;height:45px;font-size:24px}
+	footer .full-border{margin-top:15px;padding-top:15px}
+	.footer-bottom p{text-align:center}
+	.social-media-sec{justify-content:center;gap:10px}
+	/* Inner Banner Section css Start */
+	.inner_bannr_bg{padding:20px 0 20px}
+	.bread_crumbs{justify-content:start}
+	.bread_crumbs .breadcrumb li{font-size:.75rem}
+	/* Main Content Section CSS Start */
+	.main-content-area p{font-size:.875rem;line-height:24px;margin-bottom:10px}
+	/* Inner About Us Section CSS Start */
+	ul.list-view{font-size:.875rem;line-height:24px;margin-bottom:10px}
+	.about-inner-sec .video-sec .card-sec{margin:0 0 30px}
+	.about-inner-sec .video-sec .card-sec .title-sec{width:88%;bottom:-15px;padding:15px}
+	/* Vision & Mission Section CSS Start */
+	.choose-faq-sec:before,.choose-faq-bg:before{width:0}
+	.choose-faq-sec:after,.choose-faq-bg:after{width:100%}
+	.vision-mission-sec{padding:25px 0 0}
+	.vision-mission-box{padding:20px 15px;margin-bottom:15px;height:auto}
+	/* Choose & Faq Section CSS Start */
+	.choose-us-sec{padding: 25px 0px 0 0}
+	.faq-sec{padding:20px 0px 25px 0}
+	.choose-faq-bg .heading-sec.mb-2{margin-bottom:0!important}
+	.choose-us-sec ul li{margin-bottom:15px}
+	.faq-sec .card .card-header a{font-size:1rem}
+	/* Our Team Section CSS Start */
+	.our-team-sec{padding:25px 0 25px}
+	.our-team-sec .card-sec{margin-bottom:15px}
+	.our-team-sec .card-sec .img-sec img{height:auto}
+	.our-team-sec .card-sec .desc-sec .title{font-size:1rem}
+	.our-team-sec .d-flex.mt-4{margin-top:0!important}
+}
+/* Mobile Screen CSS End */
+
+/* Tab Screen CSS Start */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	/* Main Menu Section CSS Start */
+	.nav_bg_cusotom .navbar-collapse{position:fixed;top:0;right:-100%;z-index:9999;border-top:none;border-bottom:none;color:#212529;outline:0;border-top-left-radius:12px;border-bottom-left-radius:12px;box-shadow:-4px 4px 12px 0 rgba(0, 0, 0, .25);background:#fff;width:0px!important;height:100vh;display:block;padding:1rem;transition:all .15s ease-in-out}
+	.nav_bg_cusotom .navbar-collapse.show{width:400px!important;right:0}
+	.nav_bg_cusotom .navbar-collapse button.btn-close{display:block!important;margin:auto 0 auto auto}
+	.navbar-expand-lg .navbar-nav{gap:1px;margin-top:10px;height:87vh;overflow-y:auto;overflow-x:hidden}
+	.nav_bg_cusotom .home_menu_items{justify-content:space-between;color:var(--SevenColor)!important}
+	.nav_bg_cusotom .dropdown-menu{width:100%!important}
+	/* Main Menu Section CSS End */
+}
+/* Tab Screen CSS End */
+
+/* Nest Hub Screen CSS Start */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Nest Hub Screen CSS End */
+
+/* Laptop Screen CSS Start */
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    /* Header & Main nav Section css Start */
+    .logo_cust_text span{font-size:1.5rem}
+    .nav_bg_cusotom .home_menu_items{font-size:.875rem}
+    .nav_bg_cusotom .dropdown-menu li a{font-size:0.813rem;}
+    .quick-btn{font-size:12px;padding:7px 15px}
+    /* Banner Section CSS Start */
+    .banner-sec{padding:30px 0 30px}
+    .banner-sec .all_heading{font-size:2.5rem;margin-bottom:10px}
+    .banner-sec p{font-size:.875rem;margin:0 0 15px}
+    /* Counter Section CSS Start */
+    .counter-sec{padding:20px 0}
+    .counter-slider .items_custom .counter{font-size:28px}
+    .counter-slider .items_custom .title{font-size:.875rem}
+    /* About Us Section CSS Start */
+    .about-sec{padding:30px 0}
+    .all_heading{font-size:1.5rem;margin-bottom:5px}
+    .about-sec p{margin-bottom:10px;font-size:.875rem}
+    .video-play{width:45px;height:45px}
+    .video-play .material-symbols-outlined{font-size:24px}
+    /* Our Services Section CSS Start */
+    .our-services-sec{padding:30px 0}
+    .our-services-box{margin-bottom:25px}
+    .our-services-box li a{gap:10px;padding:10px;font-size:.875rem}
+    .our-services-box li a .img-sec{padding:12px;width:50px;height:50px}
+    /* Our Courses Section CSS Start */
+    .our-courses-sec{padding:30px 0}
+    .our-courses-sec .nav-pills li a{font-size:.75rem;padding:7px 15px}
+    .our-courses-slider{margin-bottom:25px}
+    .our-courses-sec .card-sec .img-sec img{height:200px}
+    .our-courses-sec .card-sec .desc-sec .title{font-size:1rem;min-height:48px}
+    .our-courses-sec .card-sec .desc-sec .rating{font-size:.75rem;gap:45px;margin:5px 0 15px}
+    .our-courses-sec .card-sec .desc-sec .rating .material-symbols-outlined{font-size:.875rem}
+    /* Events & Engagements Section CSS Start */
+    .events-engagements-sec{padding:30px 0 0}
+    .heading-sec p{margin-bottom:10px;font-size:.875rem}
+    .owl-nav button{width:34px;height:34px}
+    .owl-nav button .material-symbols-outlined{font-size:18px}
+    .events-engagements-sec #events-engagements-slider{margin-bottom:-38px}
+    .events-engagements-sec .card-sec .img-sec img{height:210px}
+    .events-engagements-sec .card-sec .desc-sec{padding:10px 10px}
+    .events-engagements-sec .card-sec .desc-sec a{font-size:.75rem}
+    .events-engagements-sec .card-sec .desc-sec a .material-symbols-outlined{font-size:1rem}
+    /* Clients & Impact Section CSS Start */
+    .clients-impact-sec{padding:68px 0 64px}
+    .testimonials{padding:40px 40px}
+    .testimonials .testimonials-box{font-size:.875rem;line-height:24px}
+    .testimonials .testimonials-box .user-sec{gap:10px;font-size:.75rem}
+    .testimonials .testimonials-box .user-sec img{border:1px solid #3D246C;width:45px;height:45px}
+    .testimonials .testimonials-box .user-sec .star span{font-size:.75rem}
+    .testimonials .btn-sec.mt-5{margin-top:25px!important}
+    /* Gov Logo Section CSS Start */
+    .gov-logo-sec .nav-pills{gap:0 10px;margin-top:-34px}
+    .gov-logo-sec .nav-pills li a{font-size:.75rem;padding:7px 15px}
+    .gov-logo-sec .tab-content a img{height:60px}
+    /* Office Locations Section CSS Start */
+    .office-locations-sec .container{margin-bottom:-26px}
+    .office-locations-sec .heading-sec{padding:15px 3px}
+    .office-locations-sec .all_heading{font-size:1.125rem}
+    .heading-bg:before{border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:27px solid var(--OneColor);right:-28px}
+    .heading-bg:after{border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:26px solid var(--SevenColor);right:-25px}
+    .office-locations-sec .location_icon a{font-size:.75rem;gap:3px}
+    .office-locations-sec .location_icon a .material-symbols-outlined{font-size:.875rem}
+    /* Footer Section CSS Start */
+    .footer-sec{padding:55px 0px 15px}
+    .footer-sec .all_heading{font-size:1rem}
+    .footer-sec .form-group{margin-bottom:10px}
+    .footer-sec label{font-size:.75rem}
+    .footer-sec .form-control{padding:0 8px 3px;font-size:0.7rem}
+    .footer-top .address-sec p{font-size:.75rem}
+    .footer-top .address-text .material-symbols-outlined{font-size:1rem;width:20px;min-width:20px;height:20px}
+    .footer-top ul{gap:7px}
+    .footer-top ul li a{font-size:.75rem}
+    .chat-box button{font-size:.875rem}
+    .chat-box button .material-symbols-outlined{width:40px;height:40px;font-size:20px}
+    footer .full-border{margin-top:20px;padding-top:15px}
+    .footer-bottom p{font-size:.75rem}
+    .social-media-sec a{width:24px;height:24px}
+	/* Inner Banner Section css Start */
+	.inner_bannr_bg{padding:30px 0 30px}
+	.bread_crumbs .breadcrumb li{font-size:.75rem}
+	/* Main Content Section CSS Start */
+	.main-content-area p{font-size:.75rem;line-height:24px;margin-bottom:10px}
+	/* Inner About Us Section CSS Start */
+	ul.list-view{font-size:.75rem;line-height:24px;margin-bottom:10px}
+	.about-inner-sec .video-sec .card-sec .title-sec{bottom:-40px;padding:15px}
+	/* Vision & Mission Section CSS Start */
+	.vision-mission-sec{padding:70px 0 0}
+	.vision-mission-box{padding:20px 15px}
+	/* Choose & Faq Section CSS Start */
+	.choose-us-sec{padding: 30px 75px 30px 0}
+	.faq-sec{padding:30px 0px 30px 30px}
+	.choose-us-sec ul li{margin-bottom:15px}
+	.faq-sec .card .card-header a{font-size:.875rem}
+	.faq-sec .card .card-body{font-size:.75rem;line-height:24px}
+	.faq-sec .card .card-body p{font-size:.75rem;line-height:24px}
+	/* Our Team Section CSS Start */
+	.our-team-sec{padding:30px 0 30px}
+	.our-team-sec .card-sec .img-sec img{height:250px}
+	.our-team-sec .card-sec .desc-sec{padding:15px}
+	.our-team-sec .card-sec .desc-sec .title{font-size:1rem}
+	.our-team-sec .card-sec .desc-sec .rating{font-size:.75rem;margin:5px 0 0}
+}
+/* Laptop Screen CSS End */
