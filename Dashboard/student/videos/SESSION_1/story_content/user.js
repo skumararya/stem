@@ -42,3 +42,11 @@ window.InitUserScripts = function ()
   }, 3000);
 };
 
+setTimeout(function () {
+  try {
+    var player = GetPlayer();
+
+    console.log("Player object:", player);
+
+  } catch (e) {}
+}, 5000);    
