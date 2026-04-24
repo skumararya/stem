@@ -663,21 +663,7 @@
     }); 
   </script>
   
-  <script>
-window.addEventListener("message", function (event) {
-
-  if (event.data?.type === "SCORM_SCORE") {
-
-    const score = event.data.score;
-
-    console.log("🎯 RECEIVED SCORE:", score);
-
-    // Save to backend
-    saveScore(score);
-  }
-
-});
-</script>
+ 
 
 </body>
 
