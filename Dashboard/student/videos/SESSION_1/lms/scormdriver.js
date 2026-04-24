@@ -2034,6 +2034,19 @@ function SCORM2004_SetScore(intScore, intMaxScore, intMinScore){
     blnResult = SCORM2004_CallSetValue("cmi.score.scaled", fltNormalizedScore) && blnResult;
 
     WriteToDebug("Returning " + blnResult);
+	
+	try {
+    window.parent.postMessage({
+        type: "SCORM_SCORE",
+        score: intScore,
+        max: intMaxScore,
+        min: intMinScore
+    }, "*");
+
+    console.log("✅ SCORE SENT:", intScore);
+} catch (e) {
+    console.log("❌ ERROR:", e);
+}
 
     return blnResult;
 }
@@ -2789,6 +2802,16 @@ function  SCORM2004_SetCompleted(){
     SCORM2004_ClearErrorInfo();
 
     blnResult = SCORM2004_CallSetValue("cmi.completion_status", SCORM2004_COMPLETED);
+	try {
+        window.parent.postMessage({
+            type: "SCORM_STATUS",
+            status: SCORM2004_COMPLETED
+        }, "*");
+
+        console.log("📘 STATUS SENT:", SCORM2004_COMPLETED);
+    } catch (e) {
+        console.log("❌ ERROR sending status:", e);
+    }
 
     return blnResult;
 }
