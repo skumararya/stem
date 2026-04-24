@@ -664,12 +664,37 @@
   </script>
   
   <script>
-window.addEventListener("message", function(event) {
-    if (event.data?.type === "QUIZ_RESULT") {
-        console.log("📊 From iframe:");
-        console.log("Score:", event.data.score);
-        console.log("Status:", event.data.status);
+// Listen data from Storyline iframe
+window.addEventListener("message", function (event) {
+
+  // Security (optional but recommended)
+  // if (event.origin !== "https://your-domain.com") return;
+
+  if (event.data && event.data.type === "SCORM_DATA") {
+
+    console.log("📥 Received:", event.data);
+
+    const key = event.data.key;
+    const value = event.data.value;
+
+    // 🎯 Capture score
+    if (key.includes("score")) {
+
+      console.log("🎯 SCORE:", value);
+
+      saveScore(value);
     }
+
+    // 🎯 Capture completion
+    if (key.includes("completion") || key.includes("lesson_status")) {
+      console.log("✅ STATUS:", value);
+    }
+
+    // 🎯 Capture pass/fail
+    if (key.includes("success")) {
+      console.log("🏁 RESULT:", value);
+    }
+  }
 });
 </script>
 
