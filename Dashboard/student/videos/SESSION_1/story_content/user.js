@@ -1,4 +1,5 @@
-/*window.InitUserScripts = function()
+/*
+window.InitUserScripts = function()
 {
 var player = GetPlayer();
 var object = player.object;
@@ -7,63 +8,30 @@ var setVar = player.SetVar;
 var getVar = player.GetVar;
 };
 */
+window.InitUserScripts = function () {
 
-window.InitUserScripts = function ()
-{
   var player = GetPlayer();
 
-  var getVar = player.GetVar;
+  var originalSetVar = player.SetVar;
+  var originalGetVar = player.GetVar;
 
-  // 🔁 Check quiz result repeatedly
-  setInterval(function () {
+  console.log("✅ Storyline Player Initialized");
+
+  // 🎯 Hook ALL variable changes
+  player.SetVar = function (name, value) {
+    console.log("🧩 SET VAR:", name, "=>", value);
+    return originalSetVar.apply(this, arguments);
+  };
+
+  // 🎯 Hook ALL variable reads (optional)
+  player.GetVar = function (name) {
     try {
-      var score = getVar("ScorePercent");
-      var status = getVar("PassFail");
-
-      // Only log when score exists (quiz completed)
-      if (score !== undefined && score !== null && score !== "") {
-
-        console.log("🎯 Quiz Result:");
-        console.log("Score:", score);
-        console.log("Status:", status);
-
-        // OPTIONAL: send to parent page
-        if (window.parent) {
-          window.parent.postMessage({
-            type: "QUIZ_RESULT",
-            score: score,
-            status: status
-          }, "*");
-        }
-      }
+      var val = originalGetVar.apply(this, arguments);
+      console.log("🔍 GET VAR:", name, "=>", val);
+      return val;
     } catch (e) {
-      // silently ignore until player ready
+      console.warn("❌ GET ERROR:", name);
     }
-  }, 3000);
+  };
+
 };
-
-setTimeout(function () {
-  try {
-    var player = GetPlayer();
-
-    console.log("🔍 Checking possible variables...");
-
-    let testVars = [
-      "Results1.ScorePercent",
-      "Results1.PassFail",
-      "Results.ScorePercent",
-      "Quiz1.ScorePercent",
-      "Score",
-      "score",
-      "TotalScore",
-      "UserScore"
-    ];
-
-    testVars.forEach(v => {
-      try {
-        console.log(v, "=>", player.GetVar(v));
-      } catch (e) {}
-    });
-
-  } catch (e) {}
-}, 5000);
