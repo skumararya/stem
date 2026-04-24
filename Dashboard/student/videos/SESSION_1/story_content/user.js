@@ -9,36 +9,29 @@ var getVar = player.GetVar;
 };
 */
 window.InitUserScripts = function () {
+
   console.log("InitUserScripts fired");
 
-  // Wait until DS + views are ready
-  const wait = setInterval(() => {
-    if (window.DS && DS.views && DS.views.nsStack) {
-      clearInterval(wait);
-
-      console.log("✅ DS ready, hooking…");
-
+  setTimeout(() => {
+    const checkEnd = setInterval(() => {
       try {
-        // Hook slide/timeline updates
-        const stack = DS.views.nsStack;
+        const currentSlide = document.querySelector(".slide-layer, .primary-slide");
 
-        stack.forEach((view, i) => {
-          if (!view) return;
+        if (currentSlide) {
+          const text = currentSlide.innerText || "";
 
-          const originalUpdate = view.updateTabIndex;
+          if (/congratulations|completed|thank you|finished/i.test(text)) {
+            console.log("🎉 Course Completed");
 
-          if (typeof originalUpdate === "function") {
-            view.updateTabIndex = function () {
-              console.log("📍 Slide / state update detected");
-              return originalUpdate.apply(this, arguments);
-            };
+            window.parent.postMessage({
+              type: "COURSE_COMPLETED"
+            }, "*");
+
+            clearInterval(checkEnd);
           }
-        });
+        }
+      } catch {}
+    }, 2000);
+  }, 5000);
 
-        console.log("✅ Hook attached to DS views");
-      } catch (e) {
-        console.error("Hook error:", e);
-      }
-    }
-  }, 1000);
 };
