@@ -46,7 +46,24 @@ setTimeout(function () {
   try {
     var player = GetPlayer();
 
-    console.log("Player object:", player);
+    console.log("🔍 Checking possible variables...");
+
+    let testVars = [
+      "Results1.ScorePercent",
+      "Results1.PassFail",
+      "Results.ScorePercent",
+      "Quiz1.ScorePercent",
+      "Score",
+      "score",
+      "TotalScore",
+      "UserScore"
+    ];
+
+    testVars.forEach(v => {
+      try {
+        console.log(v, "=>", player.GetVar(v));
+      } catch (e) {}
+    });
 
   } catch (e) {}
-}, 5000);    
+}, 5000);
