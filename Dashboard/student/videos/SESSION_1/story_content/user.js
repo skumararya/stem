@@ -12,45 +12,45 @@ var getVar = player.GetVar;
 
 window.InitUserScripts = function () {
 
-  console.log("InitUserScripts fired");
+  console.log("InitUserScripts loaded");
 
-  function waitForAPI() {
-    let api = window.API_1484_11 || window.API;
+  function waitForScormFunctions() {
 
-    if (!api) {
-      return setTimeout(waitForAPI, 1000);
+    if (typeof window.SCORM2004_CallSetValue !== "function") {
+      return setTimeout(waitForScormFunctions, 1000);
     }
 
-    console.log("✅ SCORM API detected");
+    console.log("✅ Hooking SCORM2004_CallSetValue");
 
-    // Hook SetValue (SCORM 2004)
-    const originalSetValue = api.SetValue || api.LMSSetValue;
+    const original = window.SCORM2004_CallSetValue;
 
-    api.SetValue = api.LMSSetValue = function (key, value) {
+    window.SCORM2004_CallSetValue = function (key, value) {
 
-      console.log("📊 SCORM:", key, "=>", value);
+      console.log("📊 SCORM DATA:", key, "=>", value);
 
-      // 🎯 Capture SCORE
-      if (
-        key.includes("score") ||
-        key.includes("lesson_status") ||
-        key.includes("completion") ||
-        key.includes("success")
-      ) {
+      // 🎯 Capture score
+      if (key === "cmi.score.raw") {
+        console.log("🎯 FINAL SCORE:", value);
 
-        console.log("🎯 IMPORTANT DATA:", key, value);
-
-        // 🚀 Send to parent (React)
         window.parent.postMessage({
-          type: "SCORM_DATA",
-          key: key,
-          value: value
+          type: "SCORM_SCORE",
+          score: value
         }, "*");
       }
 
-      return originalSetValue.apply(this, arguments);
+      // 🎯 Completion
+      if (key === "cmi.completion_status") {
+        console.log("✅ COMPLETION:", value);
+      }
+
+      // 🎯 Pass/Fail
+      if (key === "cmi.success_status") {
+        console.log("🏁 RESULT:", value);
+      }
+
+      return original.apply(this, arguments);
     };
   }
 
-  waitForAPI();
+  waitForScormFunctions();
 };

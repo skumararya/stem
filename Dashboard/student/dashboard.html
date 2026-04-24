@@ -664,37 +664,18 @@
   </script>
   
   <script>
-// Listen data from Storyline iframe
 window.addEventListener("message", function (event) {
 
-  // Security (optional but recommended)
-  // if (event.origin !== "https://your-domain.com") return;
+  if (event.data?.type === "SCORM_SCORE") {
 
-  if (event.data && event.data.type === "SCORM_DATA") {
+    const score = event.data.score;
 
-    console.log("📥 Received:", event.data);
+    console.log("🎯 RECEIVED SCORE:", score);
 
-    const key = event.data.key;
-    const value = event.data.value;
-
-    // 🎯 Capture score
-    if (key.includes("score")) {
-
-      console.log("🎯 SCORE:", value);
-
-      saveScore(value);
-    }
-
-    // 🎯 Capture completion
-    if (key.includes("completion") || key.includes("lesson_status")) {
-      console.log("✅ STATUS:", value);
-    }
-
-    // 🎯 Capture pass/fail
-    if (key.includes("success")) {
-      console.log("🏁 RESULT:", value);
-    }
+    // Save to backend
+    saveScore(score);
   }
+
 });
 </script>
 
