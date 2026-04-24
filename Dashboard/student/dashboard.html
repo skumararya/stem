@@ -662,6 +662,16 @@
     series.appear(1000, 100);
     }); 
   </script>
+  
+  <script>
+window.addEventListener("message", function(event) {
+    if (event.data?.type === "QUIZ_RESULT") {
+        console.log("📊 From iframe:");
+        console.log("Score:", event.data.score);
+        console.log("Status:", event.data.status);
+    }
+});
+</script>
 
 </body>
 
