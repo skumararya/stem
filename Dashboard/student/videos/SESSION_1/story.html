@@ -135,6 +135,7 @@
   
   <script src='story_content/triggers.js' type=text/javascript></script>
 <script src='story_content/user.js' type=text/javascript></script>
+ <script src="lms/scormdriver.js" charset="utf-8"></script>
   <div class="slide-loader"></div>
 
   <script>
@@ -460,21 +461,7 @@
       document.querySelector('.mobile-load-title-overlay').style.display = 'none';
     }
   </script>
- <script>
-window.addEventListener("message", function (event) {
 
-  if (event.data?.type === "SCORM_SCORE") {
-
-    const score = event.data.score;
-
-    console.log("🎯 RECEIVED SCORE:", score);
-
-    // Save to backend
-    saveScore(score);
-  }
-
-});
-</script>
   
 
   <link rel="stylesheet" href="html5/data/css/output.min.css" data-noprefix/>
