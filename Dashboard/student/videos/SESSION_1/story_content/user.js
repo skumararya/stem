@@ -9,29 +9,36 @@ var getVar = player.GetVar;
 };
 */
 window.InitUserScripts = function () {
+  console.log("InitUserScripts fired");
 
-  console.log("✅ InitUserScripts fired");
+  // Wait until DS + views are ready
+  const wait = setInterval(() => {
+    if (window.DS && DS.views && DS.views.nsStack) {
+      clearInterval(wait);
 
-  setTimeout(function () {
+      console.log("✅ DS ready, hooking…");
 
-    try {
-      var player = GetPlayer();
+      try {
+        // Hook slide/timeline updates
+        const stack = DS.views.nsStack;
 
-      console.log("🔥 Hooking into player...");
+        stack.forEach((view, i) => {
+          if (!view) return;
 
-      const originalSetVar = player.SetVar;
+          const originalUpdate = view.updateTabIndex;
 
-      player.SetVar = function (name, value) {
-        console.log("🧩 SET VAR:", name, "=>", value);
-        return originalSetVar.apply(this, arguments);
-      };
+          if (typeof originalUpdate === "function") {
+            view.updateTabIndex = function () {
+              console.log("📍 Slide / state update detected");
+              return originalUpdate.apply(this, arguments);
+            };
+          }
+        });
 
-      console.log("✅ Hook attached successfully");
-
-    } catch (e) {
-      console.error("❌ Hook failed:", e);
+        console.log("✅ Hook attached to DS views");
+      } catch (e) {
+        console.error("Hook error:", e);
+      }
     }
-
-  }, 4000); // wait for full load
-
+  }, 1000);
 };
