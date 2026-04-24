@@ -14,29 +14,43 @@ window.InitUserScripts = function () {
 
   console.log("InitUserScripts fired");
 
-  function waitForSCORM() {
-    if (window.SCORM2004_API || window.API) {
-      console.log("✅ SCORM API found");
+  function waitForAPI() {
+    let api = window.API_1484_11 || window.API;
 
-      const api = window.SCORM2004_API || window.API;
-
-      const originalSetValue = api.SetValue;
-
-      api.SetValue = function (key, value) {
-        console.log("📊 SCORM SET:", key, "=>", value);
-
-        // 🎯 capture important data
-        if (key.includes("score") || key.includes("completion") || key.includes("success")) {
-          console.log("🎯 IMPORTANT:", key, value);
-        }
-
-        return originalSetValue.apply(this, arguments);
-      };
-
-    } else {
-      setTimeout(waitForSCORM, 1000);
+    if (!api) {
+      return setTimeout(waitForAPI, 1000);
     }
+
+    console.log("✅ SCORM API detected");
+
+    // Hook SetValue (SCORM 2004)
+    const originalSetValue = api.SetValue || api.LMSSetValue;
+
+    api.SetValue = api.LMSSetValue = function (key, value) {
+
+      console.log("📊 SCORM:", key, "=>", value);
+
+      // 🎯 Capture SCORE
+      if (
+        key.includes("score") ||
+        key.includes("lesson_status") ||
+        key.includes("completion") ||
+        key.includes("success")
+      ) {
+
+        console.log("🎯 IMPORTANT DATA:", key, value);
+
+        // 🚀 Send to parent (React)
+        window.parent.postMessage({
+          type: "SCORM_DATA",
+          key: key,
+          value: value
+        }, "*");
+      }
+
+      return originalSetValue.apply(this, arguments);
+    };
   }
 
-  waitForSCORM();
+  waitForAPI();
 };
