@@ -10,47 +10,51 @@ var getVar = player.GetVar;
 */
 
 
-window.InitUserScripts = function () {
+(function () {
 
-  console.log("InitUserScripts loaded");
+  console.log("🚀 Hooking TinCan (xAPI)");
 
-  function waitForScormFunctions() {
+  function waitForTinCan() {
 
-    if (typeof window.SCORM2004_CallSetValue !== "function") {
-      return setTimeout(waitForScormFunctions, 1000);
+    if (!window.TinCan || !TinCan.prototype.sendStatement) {
+      return setTimeout(waitForTinCan, 1000);
     }
 
-    console.log("✅ Hooking SCORM2004_CallSetValue");
+    console.log("✅ TinCan detected");
 
-    const original = window.SCORM2004_CallSetValue;
+    const original = TinCan.prototype.sendStatement;
 
-    window.SCORM2004_CallSetValue = function (key, value) {
+    TinCan.prototype.sendStatement = function (statement, callback) {
 
-      console.log("📊 SCORM DATA:", key, "=>", value);
+      console.log("📊 xAPI Statement:", statement);
 
-      // 🎯 Capture score
-      if (key === "cmi.score.raw") {
-        console.log("🎯 FINAL SCORE:", value);
+      // 🎯 Capture SCORE
+      if (statement.result && statement.result.score) {
+
+        const score = statement.result.score.raw;
+
+        console.log("🎯 SCORE:", score);
 
         window.parent.postMessage({
           type: "SCORM_SCORE",
-          score: value
+          score: score
         }, "*");
       }
 
       // 🎯 Completion
-      if (key === "cmi.completion_status") {
-        console.log("✅ COMPLETION:", value);
+      if (statement.result && statement.result.completion) {
+        console.log("✅ COMPLETION:", statement.result.completion);
       }
 
       // 🎯 Pass/Fail
-      if (key === "cmi.success_status") {
-        console.log("🏁 RESULT:", value);
+      if (statement.result && statement.result.success !== undefined) {
+        console.log("🏁 SUCCESS:", statement.result.success);
       }
 
       return original.apply(this, arguments);
     };
   }
 
-  waitForScormFunctions();
-};
+  waitForTinCan();
+
+})();
