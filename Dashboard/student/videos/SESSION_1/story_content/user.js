@@ -10,28 +10,28 @@ var getVar = player.GetVar;
 */
 window.InitUserScripts = function () {
 
-  var player = GetPlayer();
+  console.log("✅ InitUserScripts fired");
 
-  var originalSetVar = player.SetVar;
-  var originalGetVar = player.GetVar;
+  setTimeout(function () {
 
-  console.log("✅ Storyline Player Initialized");
-
-  // 🎯 Hook ALL variable changes
-  player.SetVar = function (name, value) {
-    console.log("🧩 SET VAR:", name, "=>", value);
-    return originalSetVar.apply(this, arguments);
-  };
-
-  // 🎯 Hook ALL variable reads (optional)
-  player.GetVar = function (name) {
     try {
-      var val = originalGetVar.apply(this, arguments);
-      console.log("🔍 GET VAR:", name, "=>", val);
-      return val;
+      var player = GetPlayer();
+
+      console.log("🔥 Hooking into player...");
+
+      const originalSetVar = player.SetVar;
+
+      player.SetVar = function (name, value) {
+        console.log("🧩 SET VAR:", name, "=>", value);
+        return originalSetVar.apply(this, arguments);
+      };
+
+      console.log("✅ Hook attached successfully");
+
     } catch (e) {
-      console.warn("❌ GET ERROR:", name);
+      console.error("❌ Hook failed:", e);
     }
-  };
+
+  }, 4000); // wait for full load
 
 };
