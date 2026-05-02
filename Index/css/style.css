@@ -105,13 +105,22 @@ a.custom_child_menu{display:flex!important;align-items:center;justify-content:ce
 	.custom-submenu.show, .dropdown_child_menu_cust li ul.custom-submenu.opened{display:block!important}
 	.material-symbols-outlined.rotate{transform:rotate(-90deg);position:absolute;right:15px}
 }
+
+.our-services-box p { 
+    font-size: 14px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link { 
+    background-color: #ffcf3a !important;
+    color: #000 !important;;
+}
 /* Main nav css Edn */
 /* Banner Section CSS Start */
 .banner-sec{position:relative;padding:50px 0 40px}
 .carousel, .carousel-inner, .carousel-item{height:100%}
 .banner-sec img{width:100%;object-fit:cover}
 .banner-sec .row{align-items:center}
-.banner-sec .all_heading{font-size:4.5rem;line-height:normal;margin-bottom:15px}
+.banner-sec .all_heading{font-size:3rem;line-height:normal;margin-bottom:15px}
 .banner-sec p{font-size:1rem;color:var(--GrayColor);margin:0 0 20px}
 /* Banner Section CSS End */
 /* Counter Section CSS Start */
