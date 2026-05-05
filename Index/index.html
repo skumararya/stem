@@ -189,17 +189,17 @@
 				<div class="row gy-3">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6">
 						<div class="video-sec">
-							<div class="card-sec">
+							<div class="card-sec video-card-trigger" data-video="images/vid_01.mp4" style="cursor:pointer;">
 								<div class="img-sec">
 									<img src="images/about-video-1.png" alt="">
 								</div>
-								<a href="#" class="video-play"><span class="material-symbols-outlined">play_arrow</span></a>
+								<a href="#" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
 							</div>
-							<div class="card-sec">
+							<div class="card-sec video-card-trigger" data-video="images/vid_02.mp4" style="cursor:pointer;">
 								<div class="img-sec">
 									<img src="images/about-video-2.png" alt="">
 								</div>
-								<a href="#" class="video-play"><span class="material-symbols-outlined">play_arrow</span></a>
+								<a href="#" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
 							</div>
 						</div>
 					</div>
@@ -834,11 +834,56 @@
 		<!-- Footer Section End -->
 	</div>
 
+	<!-- Video Modal -->
+	<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content" style="background:#000;border:none;border-radius:12px;overflow:hidden;">
+				<div class="modal-header" style="border:none;padding:10px 16px 0;justify-content:flex-end;">
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" style="padding:0 0 16px;">
+					<video id="videoModalPlayer"
+						controls
+						autoplay
+						style="width:100%;display:block;max-height:70vh;background:#000;">
+						<source id="videoModalSource" src="" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Video Modal -->
+
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script src="js/jquery.easy-ticker.min.js"></script>
 	<script src="js/owl.carousel.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+		// Video Modal Logic
+		document.querySelectorAll('.video-card-trigger').forEach(function(card) {
+			card.addEventListener('click', function(e) {
+				e.preventDefault();
+				var videoUrl = this.getAttribute('data-video');
+				var player = document.getElementById('videoModalPlayer');
+				var source = document.getElementById('videoModalSource');
+				source.src = videoUrl;
+				player.load();
+				player.play();
+				var modal = new bootstrap.Modal(document.getElementById('videoModal'));
+				modal.show();
+			});
+		});
+
+		// Stop video on modal close
+		document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
+			var player = document.getElementById('videoModalPlayer');
+			player.pause();
+			player.currentTime = 0;
+			document.getElementById('videoModalSource').src = '';
+		});
+	</script>
 
 </body>
 

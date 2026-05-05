@@ -12,6 +12,65 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/material-symbols-outlined.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style>
+		/* Our Offerings Cards */
+		.offering-card {
+			background: #fff;
+			border-radius: 12px;
+			padding: 28px 20px 22px;
+			text-align: center;
+			height: 100%;
+			border: 1px solid #e8f0f7;
+			box-shadow: 0 4px 18px rgba(0,100,180,0.07);
+			transition: transform 0.25s ease, box-shadow 0.25s ease;
+		}
+		.offering-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 28px rgba(0,100,180,0.14);
+		}
+		.offering-icon {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #e8f4ff, #cce4ff);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 14px;
+		}
+		.offering-icon .material-symbols-outlined {
+			font-size: 28px;
+			color: var(--primary-color, #0d6efd);
+		}
+		.offering-card h5 {
+			font-size: 1rem;
+			font-weight: 700;
+			color: #1a2e4a;
+			margin-bottom: 8px;
+		}
+		.offering-card p {
+			font-size: 0.875rem;
+			color: #6b7a8d;
+			margin: 0;
+			line-height: 1.5;
+		}
+		.offerings-tabs .nav-link {
+			border-radius: 30px;
+			padding: 8px 20px;
+			font-size: 0.9rem;
+			margin: 4px;
+		}
+		.download-brochure-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 12px 32px;
+			font-size: 1rem;
+		}
+		.download-brochure-btn .material-symbols-outlined {
+			font-size: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -124,390 +183,220 @@
 		<!-- Inner Banner Section End -->
 		<!-- Main Content Start -->
 		<div class="main-content-area">					
-			<!-- Courses & Programs Section Start -->
+			<!-- Our Offerings Section Start -->
 			<div class="our-courses-sec courses-programs-page">
 				<div class="container">
 					<div class="row">
-						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="col-12">
 							<div class="heading-sec">
 								<div>
-									<h2 class="all_heading">What We offer</h2>
+									<h2 class="all_heading">Our Offerings</h2>
 									<span class="underline-bg"></span>
-									<p>Unlock your potential in AI and Engineering with our comprehensive, hands-on programs designed for beginners to advanced learners. We blend cutting-edge theory with real-world projects to build skills that employers demand.</p>
-								</div>								
+								</div>
 							</div>
-							<!-- Nav pills -->
-							<ul class="nav nav-pills mt-3" role="tablist">
+							<!-- Nav Tabs -->
+							<ul class="nav nav-pills mt-3 offerings-tabs" role="tablist">
 								<li class="nav-item" role="presentation">
-									<a class="nav-link active" data-bs-toggle="pill" href="#home" aria-selected="true" role="tab">Students</a>
+									<a class="nav-link active" data-bs-toggle="pill" href="#off-labs" role="tab">Labs Setup Solutions</a>
 								</li>
 								<li class="nav-item" role="presentation">
-									<a class="nav-link" data-bs-toggle="pill" href="#menu1" aria-selected="false" tabindex="-1" role="tab">College Learners</a>
+									<a class="nav-link" data-bs-toggle="pill" href="#off-workshops" role="tab">Workshops &amp; Skill Programs</a>
 								</li>
 								<li class="nav-item" role="presentation">
-									<a class="nav-link" data-bs-toggle="pill" href="#menu2" aria-selected="false" tabindex="-1" role="tab">B.Ed &amp; D.Ed Learners</a>
+									<a class="nav-link" data-bs-toggle="pill" href="#off-products" role="tab">Products &amp; Technology Solutions</a>
+								</li>
+								<li class="nav-item" role="presentation">
+									<a class="nav-link" data-bs-toggle="pill" href="#off-digital" role="tab">Digital Learning Courses LMS Based</a>
 								</li>
 							</ul>
-							<div class="tab-content">
-								<div class="tab-pane active" id="home" role="tabpanel">
-									<div class="our-courses-slider">
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+
+							<div class="tab-content offerings-tab-content mt-4">
+
+								<!-- Tab 1: Labs Setup Solutions -->
+								<div class="tab-pane active" id="off-labs" role="tabpanel">
+									<div class="row gy-4">
+										<div class="col-12 col-sm-6 col-md-3">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">science</span></div>
+												<h5>STEM &amp; AI Lab</h5>
+												<p>Hands-on science, robotics, and AI learning</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-3">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">computer</span></div>
+												<h5>ICT Lab</h5>
+												<p>Digital literacy and technology integration</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-3">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">lightbulb</span></div>
+												<h5>Innovation Lab</h5>
+												<p>Creativity, design thinking, and prototyping</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-3">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">child_care</span></div>
+												<h5>Early Foundation Lab</h5>
+												<p>Activity-based learning for young learners</p>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="menu1" role="tabpanel">
-									<div class="our-courses-slider">
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+
+								<!-- Tab 2: Workshops & Skill Programs -->
+								<div class="tab-pane fade" id="off-workshops" role="tabpanel">
+									<div class="row gy-4">
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">psychology</span></div>
+												<h5>Artificial Intelligence (AI)</h5>
+												<p>Hands-on AI concepts and real-world applications</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">precision_manufacturing</span></div>
+												<h5>Robotics &amp; Automation</h5>
+												<p>Build and program robots from the ground up</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">flight</span></div>
+												<h5>Drone Technology</h5>
+												<p>Drone assembly, programming, and operations</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">print</span></div>
+												<h5>Rapid Prototyping</h5>
+												<p>Design and build prototypes using modern tools</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
-											</div>
-										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">code</span></div>
+												<h5>Coding Platforms</h5>
+												<p>Arduino, Python, and IoT programming</p>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="menu2" role="tabpanel">
-									<div class="our-courses-slider">
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-1.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Robotics &amp; AI Fundamentals</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4.5 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+
+								<!-- Tab 3: Products & Technology Solutions -->
+								<div class="tab-pane fade" id="off-products" role="tabpanel">
+									<div class="row gy-4">
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">tv</span></div>
+												<h5>Smart Boards &amp; Interactive Displays</h5>
+												<p>Next-gen interactive classroom technology</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-2.png" alt="">
-											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">Coding &amp; Computational Thinking</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+												<h5>Robotics &amp; AI Kits</h5>
+												<p>Complete kits for robotics and AI experiments</p>
 											</div>
 										</div>
-										<div class="card-sec">
-											<div class="img-sec">
-												<img src="images/our-courses-3.png" alt="">
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">flight_takeoff</span></div>
+												<h5>Drone Kits</h5>
+												<p>Ready-to-assemble drone kits for schools</p>
 											</div>
-											<div class="desc-sec">
-												<a href="#" class="title">STEM Skill Development</a>
-												<div class="rating">
-													<div class="star">
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-														<span class="material-symbols-outlined">star</span>
-													</div>
-													<div class="star-no">5.0 (4 rating)</div>
-												</div>
-												<a href="#" class="btn quick-btn green-btn">View Details</a>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">view_in_ar</span></div>
+												<h5>3D Printers</h5>
+												<p>Professional 3D printers for creative labs</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">biotech</span></div>
+												<h5>STEM Learning Kits</h5>
+												<p>Curriculum-aligned kits for all grade levels</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">developer_board</span></div>
+												<h5>Arduino &amp; IoT Devices</h5>
+												<p>Microcontrollers and IoT components for labs</p>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>						
-						</div>					
+
+								<!-- Tab 4: Digital Learning Courses (LMS based) -->
+								<div class="tab-pane fade" id="off-digital" role="tabpanel">
+									 
+									<div class="row gy-4">
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+												<h5>Robotics &amp; AI</h5>
+												<p>Interactive LMS modules on robotics and AI</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">hub</span></div>
+												<h5>MIT-Based Learning Modules</h5>
+												<p>Curriculum aligned with MIT open learning frameworks</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">view_in_ar</span></div>
+												<h5>3D Designing</h5>
+												<p>Learn 3D modeling and product design digitally</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">flight</span></div>
+												<h5>Drone Technology</h5>
+												<p>Theory and simulations for drone operations</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">developer_board</span></div>
+												<h5>Arduino Programming</h5>
+												<p>Online Arduino coding and microcontroller basics</p>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<div class="offering-card">
+												<div class="offering-icon"><span class="material-symbols-outlined">wifi</span></div>
+												<h5>Coding &amp; IoT</h5>
+												<p>Internet of Things with live coding projects</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- Download Brochure Button -->
+							<div class="d-flex justify-content-center mt-5">
+								<a href="#" class="btn quick-btn download-brochure-btn">
+									<span class="material-symbols-outlined">system_update_alt</span> Download Brochure
+								</a>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- Our Offerings Section End -->
 			<!-- Courses & Programs Section End -->
 		</div>
 		<!-- Main Content End -->
