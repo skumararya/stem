@@ -4719,6 +4719,12 @@ function SCORM_SetScore(intScore, intMaxScore, intMinScore){
     blnResult = SCORM_CallLMSSetValue("cmi.core.score.min", intMinScore) && blnResult;
 
     WriteToDebug("Returning " + blnResult);
+	
+	window.parent.postMessage({
+    type: "COURSE_RESULT",
+    score: intScore,
+    status: "completed"
+}, "*");
 
     return blnResult;
 }

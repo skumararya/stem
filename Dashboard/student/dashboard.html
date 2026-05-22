@@ -707,7 +707,23 @@
     series.appear(1000, 100);
     }); 
   </script>
-  
+<script>
+
+window.addEventListener("message", function(event){
+
+    console.log("MY RESULT:", event.data);
+
+    if(event.data.type === "COURSE_RESULT"){
+
+        console.log("FINAL SCORE:", event.data.score);
+
+        console.log("STATUS:", event.data.status);
+
+    }
+
+});
+
+</script>
  
 
 </body>
