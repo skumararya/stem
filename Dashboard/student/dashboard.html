@@ -711,14 +711,13 @@
 
 window.addEventListener("message", function(event){
 
-    console.log("MY RESULT:", event.data);
+if(event.data.type === "COURSE_RESULT"){
 
-    if(event.data.type === "COURSE_RESULT"){
+        console.log("FINAL RESULT:", event.data);
 
-        console.log("FINAL SCORE:", event.data.score);
+        console.log("SCORE:", event.data.score);
 
         console.log("STATUS:", event.data.status);
-
     }
 
 });
