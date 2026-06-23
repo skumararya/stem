@@ -114,6 +114,18 @@ a.custom_child_menu{display:flex!important;align-items:center;justify-content:ce
     background-color: #ffcf3a !important;
     color: #000 !important;;
 }
+
+
+p.titletag span {
+    font-size: 16px;
+    display: block;
+}
+.gov-logo-sec{display: none;}
+
+p.titletag {
+    font-size: 22px;
+    color: #ffffff;
+}
 /* Main nav css Edn */
 /* Banner Section CSS Start */
 .banner-sec{position:relative;padding:50px 0 40px}
@@ -350,3 +362,89 @@ ul.list-view li{list-style-type:disc}
 .our-team-sec .card-sec .desc-sec .title{font-size:1.125rem;font-weight:600;color:var(--FourColor);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;text-overflow:ellipsis;overflow:hidden}
 .our-team-sec .card-sec .desc-sec .rating{display:flex;align-items:center;justify-content:start;color:var(--GrayColor);font-size:.875rem;gap:60px;margin:10px 0 0}
 /* Our Team Section CSS End */
+
+/* Skillsets styling */
+.sub_heading{font-size:18px;line-height:1.2;font-weight:600;color:var(--FourColor);margin:0 0 8px}
+.skillsets .skill-item .material-symbols-outlined{font-size:28px;color:var(--OneColor);display:inline-block;animation:float-bob 3s ease-in-out infinite;transform-origin:center}
+.skillsets .skill-item span:last-child{font-size:14px;color:var(--GrayColor);font-weight:500}
+@keyframes float-bob{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-6deg)}100%{transform:translateY(0) rotate(0)}}
+
+/* Impact stats */
+.impact-stats{padding:18px 0}
+.impact-stats .impact-item{display:flex;flex-direction:column;align-items:center;justify-content:center} 
+.impact-stats .impact-count::after{content:'+';margin-left:4px}
+.impact-stats .impact-label{font-size:0.95rem;color:var(--GrayColor);margin-top:6px;font-weight:600}
+@media (max-width:767px){
+    .impact-stats .impact-count{font-size:22px}
+    .impact-stats .impact-label{font-size:0.9rem}
+}
+
+/* Impact card styles */
+.impact-box{display:block;text-decoration:none}
+.impact-card{gap:16px;padding:0px;border-radius:10px;align-items:center}
+.impact-card .icon-wrap{flex:0 0 auto}
+.impact-card .impact-text{flex:1 1 auto}
+.impact-card .impact-count{font-size:20px; margin:0;color:inherit}
+.impact-card .impact-count::after{content:'+';margin-left:6px}
+.impact-card .impact-label{font-size:0.95rem;margin:0;color:inherit}
+.icon-circle{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.icon-circle .material-symbols-outlined{font-size:26px}
+.icon-circle{border:2px dashed rgba(0,0,0,0.08);background:transparent}
+.impact-1 .icon-circle{border-color:rgba(27,117,232,0.15);background:#ffffff}
+.impact-2 .icon-circle{border-color:rgba(255,166,0,0.15);background:#ffffff}
+.impact-3 .icon-circle{border-color:rgba(0,188,101,0.12);background:#ffffff}
+.impact-4 .icon-circle{border-color:rgba(244,80,128,0.12);background:#ffffff}
+.impact-multi .icon-circle{border-color:rgba(255,255,255,0.15);background:transparent}
+.impact-1{color: var(--FourColor); */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 7px;
+    background-color: #EAF6FF;
+    padding: 15px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--FourColor);
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;}
+.impact-2{display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 7px;
+    background-color: #e9debb;
+    padding: 15px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--FourColor);
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;}
+.impact-3{display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 7px;
+    background-color: #a8f5f5;
+    padding: 15px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--FourColor);
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;}
+.impact-4{display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 7px;
+    background-color: #c6cffd;
+    padding: 15px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--FourColor);
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;}
+.impact-multi{background:linear-gradient(90deg,#7B0B66,#5F338A);color:#fff;padding:14px}
+
+@media (max-width:767px){
+    .icon-circle{width:52px;height:52px}
+    .icon-circle .material-symbols-outlined{font-size:22px}
+    .impact-card{gap:12px;padding:12px}
+    .impact-card .impact-count{font-size:18px}
+}
