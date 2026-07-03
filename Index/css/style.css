@@ -314,7 +314,7 @@ li.breadcrumb-item.active:before{content:'\eac9';font-family:'Material Symbols O
 .about-inner-sec .video-sec .card-sec .title-sec .video-play{position:initial;width:auto;height:auto;background:transparent;color:var(--FiveColor);font-size:.875rem;gap:10px;justify-content:start}
 .about-inner-sec .video-sec .card-sec .title-sec .video-play .material-symbols-outlined{font-weight:200;font-size:50px}
 ul.list-view{padding-left:28px;font-size:.875rem;line-height:28px;margin-bottom:15px}
-ul.list-view li{list-style-type:disc}
+ul.list-view li{list-style-type:disc; color: #ffffff;}
 /* Inner About Us Section CSS End */
 /* Vision & Mission Section CSS Start */
 .vision-mission-sec{padding:100px 0 0}

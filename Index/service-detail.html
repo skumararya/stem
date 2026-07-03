@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>School STEM Lab | Our Services</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/material-symbols-outlined.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style>
+		/* ---------------------------------------------------
+		   School STEM Lab detail page — page-specific styling
+		   Built on top of the existing design tokens in style.css
+		--------------------------------------------------- */
+
+		.stem-detail-sec { padding: 50px 0 60px; position: relative; overflow: hidden; }
+		.stem-detail-sec .eyebrow { color: var(--GrayColor); font-size: 1.125rem; font-weight: 500; margin-bottom: 25px; line-height: 32px; }
+
+		.stem-hero-img { border-radius: 0 60px 0 0; overflow: hidden; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(6,5,58,0.12); }
+		.stem-hero-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+		.stem-detail-sec .body-copy p { color: var(--GrayColor); }
+
+		.zone-list { padding-left: 0; margin: 0 0 15px; }
+		.zone-list li { list-style: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; color: var(--FourColor); font-weight: 500; }
+		.zone-list li:before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--TwoColor); flex-shrink: 0; }
+
+		.plan-heading { margin-top: 10px; }
+
+		/* Phase tab switcher */
+		.phase-tabs { display: flex; border-radius: 8px; overflow: hidden; box-shadow: 0 0 14px #edecec; margin-bottom: 0; }
+		.phase-tabs .phase-tab { flex: 1; text-align: center; padding: 16px 10px; font-weight: 600; font-size: 1rem; color: var(--GrayColor); background: #F5F7FA; cursor: pointer; border: 0; transition: all 0.3s ease-in-out; }
+		.phase-tabs .phase-tab + .phase-tab { border-left: 1px solid #ffffff40; }
+		.phase-tabs .phase-tab.active,
+		.phase-tabs .phase-tab:hover { background: #BB0064; color: #fff; }
+
+		.phase-panel { background: #F5F7FA; border-radius: 0 0 8px 8px; padding: 30px; display: none; }
+		.phase-panel.active { display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+		.phase-panel .phase-img { flex: 0 0 320px; border-radius: 8px; overflow: hidden; }
+		.phase-panel .phase-img img { width: 100%; height: 220px; object-fit: cover; display: block; }
+		.phase-panel .phase-copy { flex: 1 1 260px; }
+		.phase-panel .phase-copy h4 { font-family: 'Roboto'; color: var(--FourColor); font-size: 1.25rem; font-weight: 600; margin-bottom: 14px; }
+		.phase-panel .phase-copy ul { padding-left: 0; margin: 0; }
+		.phase-panel .phase-copy ul li { list-style: none; display: flex; align-items: center; gap: 10px; padding: 5px 0; color: var(--GrayColor); font-size: .95rem; }
+		.phase-panel .phase-copy ul li:before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--OneColor); flex-shrink: 0; }
+
+		/* Sidebar cards */
+		.sidebar-stack { display: flex; flex-direction: column; gap: 25px; position: sticky; top: 100px; }
+
+		.investment-card { background: var(--FourColor); border-radius: 14px; padding: 30px; color: #fff; }
+		.investment-card h3 { font-family: 'Roboto'; font-size: 1.375rem; font-weight: 600; margin-bottom: 22px; }
+		.investment-card .invest-row { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: .9rem; }
+		.investment-card .invest-row:last-of-type { border-bottom: 0; }
+		.investment-card .invest-row .plan-name { color: #fff; }
+		.investment-card .invest-row .plan-price { color: var(--OneColor); font-weight: 600; white-space: nowrap; }
+		.investment-card .quick-btn { margin-top: 22px; width: 100%; text-align: center; border-color: var(--OneColor); }
+
+		.faculty-card { background: linear-gradient(135deg, #BB0064, #8f0050); border-radius: 14px; padding: 30px; color: #fff; }
+		.faculty-card h3 { font-family: 'Roboto'; font-size: 1.375rem; font-weight: 600; margin-bottom: 8px; }
+		.faculty-card .faculty-note { font-style: italic; font-size: .85rem; color: #ffffffcc; margin-bottom: 18px; }
+		.faculty-card ul { padding-left: 0; margin: 0; }
+		.faculty-card ul li { list-style: none; display: flex; align-items: center; gap: 10px; padding: 8px 0; font-weight: 500; font-size: .95rem; }
+		.faculty-card ul li:before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--OneColor); flex-shrink: 0; }
+
+		@media (max-width: 991px) {
+			.sidebar-stack { position: static; margin-top: 40px; }
+			.phase-panel.active { flex-direction: column; }
+			.phase-panel .phase-img { flex: 0 0 auto; width: 100%; }
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper-area">
+		<!-- Header Section Start -->
+		<header class="header_section">
+			<div class="container">
+				<div class="row cust_row_header">
+					<div class="col-12 col-md-6 col-lg-2">
+						<div class="logo_box_cust top_logo_s" title="Logo">
+							<a href="index.html" title="Government of India">
+								<img src="images/logo.svg" alt="Logo">
+								 
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-md-10 col-lg-10 d-md-block">
+						<div class="flex_item_box-inner_login_btn">
+							<!-- Main Menu Section Start -->
+							<div class="main_menu">
+								<nav class="navbar navbar-expand-lg nav_bg_cusotom fixMenuLargeScreen">
+									<div class="w-auto">
+										<div class="collapse navbar-collapse w-100" id="offcanvasRight2">
+											<button type="button" class="btn-close d-none" data-bs-dismiss="offcanvas"
+												aria-label="Close"></button>
+											<ul class="w-100 navbar-nav me-auto mb-2 mb-lg-0">
+												<li class="nav-item">
+													<a class="nav-link  home_menu_items " aria-current="page"
+														href="index.html" role="button">Home</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link  home_menu_items " aria-current="page"
+														href="about-us.html" role="button">About Us</a>
+												</li>
+											
+												<li class="nav-item">
+													<a class="nav-link  home_menu_items active" aria-current="page"
+														href="our-services.html" role="button">Our Services</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link  home_menu_items" aria-current="page"
+														href="#" role="button">Events</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link  home_menu_items" aria-current="page"
+														href="contact.html" role="button">Contact Us</a>
+												</li>
+												<!-- <li class="nav-item dropdown">
+													<a class="nav-link  home_menu_items" aria-current="page"
+														href="#" role="button">Media <span class="material-symbols-outlined notranslate">expand_more</span></a>																	
+													<ul class="dropdown-menu dropdown_child_menu_cust">
+														<li><a class="dropdown-item" href="#">Photo </a></li>
+														<li><a class="dropdown-item" href="#">Video</a></li>
+													</ul>
+												</li> -->
+											</ul>
+										</div>
+									</div>
+								</nav>
+							</div>
+							<!-- Main Menu Section End -->
+							<div class="buttonsec">
+							<a href="#" class="btn quick-btn">Get Started</a>
+							<a href="../Login/login.html" class="btn login-btn">Login</a>
+							</div>
+
+
+							<div class="flex_item_box d-block d-lg-none custom_menu_mobile_tab">
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+									data-bs-target="#offcanvasRight2" aria-expanded="true">
+									<span class="bhashini-skip-translation menu-icon material-symbols-outlined pointer"
+										title="More Menu" role="navigation" tabindex="0">menu</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header Section End -->
+		<!-- Inner Banner Section Start -->
+		<section class="inner_bannr_bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="heading-sec">
+							<div>
+								<h2 class="all_heading text-white">School STEM Lab</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="bread_crumbs">
+							<div class="wrapper">
+								<nav aria-label="Breadcrumb">
+									<ol class="breadcrumb" aria-label="">
+										<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+										<li class="breadcrumb-item"><a href="#">Our Services</a></li>
+										<li class="breadcrumb-item active" aria-current="page">School STEM Lab</li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Inner Banner Section End -->
+
+		<!-- Main Content Start -->
+		<div class="main-content-area">
+			<div class="stem-detail-sec">
+				<div class="container">
+					<div class="row">
+						<!-- Left column -->
+						<div class="col-12 col-lg-8">
+							<p class="eyebrow">Transforming Education Through a Future-Ready STEM Innovation Lab</p>
+
+							<div class="stem-hero-img">
+								<img src="images/stem-lab-hero.jpg" alt="Student experimenting in a STEM lab">
+							</div>
+
+							<div class="heading-sec body-copy">
+								<div>
+									<h2 class="all_heading">Empowering Students. Elevating Schools. Enabling the Future.</h2>
+									<span class="underline-bg"></span>
+									<p>Imagine a space where students don't just learn science — they build robots, design solutions, write code, test ideas, and innovate with confidence.</p>
+									<p>As an experienced STEM Lab consultant who has successfully implemented labs in multiple schools, I propose establishing a Future-Ready STEM Innovation Lab that aligns with NEP 2020, experiential learning, and 21st-century skill development.</p>
+								</div>
+							</div>
+
+							<div class="heading-sec">
+								<div>
+									<h3 class="sub_heading">Integrated Learning Zones</h3>
+									<span class="underline-bg"></span>
+								</div>
+							</div>
+							<ul class="zone-list">
+								<li>Science Exploration Zone</li>
+								<li>Robotics &amp; Engineering Zone</li>
+								<li>Coding &amp; Innovation Zone</li>
+							</ul>
+
+							<div class="heading-sec plan-heading">
+								<div>
+									<h3 class="sub_heading">Structured Implementation Plan</h3>
+									<span class="underline-bg"></span>
+								</div>
+							</div>
+
+							<div class="phase-tabs" role="tablist">
+								<button type="button" class="phase-tab" data-phase="1" role="tab">Phase 1</button>
+								<button type="button" class="phase-tab active" data-phase="2" role="tab" aria-selected="true">Phase 2</button>
+								<button type="button" class="phase-tab" data-phase="3" role="tab">Phase 3</button>
+							</div>
+
+							<div class="phase-panel" id="phase-1" role="tabpanel">
+								<div class="phase-img">
+									<img src="images/stem-lab-discovery.jpg" alt="Needs assessment and planning">
+								</div>
+								<div class="phase-copy">
+									<h4>Discovery &amp; Planning (2 Weeks)</h4>
+									<ul>
+										<li>School needs assessment</li>
+										<li>Space &amp; layout design</li>
+										<li>Curriculum alignment mapping</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="phase-panel active" id="phase-2" role="tabpanel">
+								<div class="phase-img">
+									<img src="images/stem-lab-phase-2.jpg" alt="Students working on a robotics kit during lab installation">
+								</div>
+								<div class="phase-copy">
+									<h4>Installation &amp; Setup (3–4 Weeks)</h4>
+									<ul>
+										<li>Science Exploration Zone</li>
+										<li>Robotics &amp; Engineering Zone</li>
+										<li>Coding &amp; Innovation Zone</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="phase-panel" id="phase-3" role="tabpanel">
+								<div class="phase-img">
+									<img src="images/stem-lab-launch.jpg" alt="Teacher training and lab launch">
+								</div>
+								<div class="phase-copy">
+									<h4>Training &amp; Launch (1–2 Weeks)</h4>
+									<ul>
+										<li>Faculty certification workshops</li>
+										<li>Student onboarding sessions</li>
+										<li>Go-live &amp; ongoing support</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right column / sidebar -->
+						<div class="col-12 col-lg-4">
+							<div class="sidebar-stack">
+								<div class="investment-card">
+									<h3>Investment Overview</h3>
+									<div class="invest-row">
+										<span class="plan-name">Basic STEM Setup</span>
+										<span class="plan-price">₹4–6 Lakhs</span>
+									</div>
+									<div class="invest-row">
+										<span class="plan-name">Robotics + Coding Lab</span>
+										<span class="plan-price">₹8–12 Lakhs</span>
+									</div>
+									<div class="invest-row">
+										<span class="plan-name">Adv. AI &amp; Innovation Lab</span>
+										<span class="plan-price">₹15–20 Lakhs</span>
+									</div>
+									<a href="#" class="btn login-btn quick-btn">Enquire Now</a>
+								</div>
+
+								<div class="faculty-card">
+									<h3>Faculty Enablement</h3>
+									<p class="faculty-note">A lab succeeds only when teachers are empowered.</p>
+									<ul>
+										<li>Certified Teacher Training</li>
+										<li>Curriculum Mapping Support</li>
+										<li>Ongoing Technical Support</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Main Content End -->
+
+		<!-- Office Locations Section Start -->
+		<div class="office-locations-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 heading-bg">
+						<div class="heading-sec">
+							<div>
+								<h2 class="all_heading text-white m-0">Office Locations</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-9 col-lg-9">
+						<ul class="location_icon">
+							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Ranchi</a></li>
+							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Bangalore</a></li>
+							<li><a href="#"><span class="material-symbols-outlined">location_on</span> West Bengal</a></li>
+							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Chhattisgarh</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Office Locations Section End -->
+		<!-- Footer Section Start -->
+		<footer>
+			<div class="footer-sec">
+				<div class="container">
+					<div class="row gy-3 footer-top">
+						<div class="col-sm-12 col-md-3 col-lg-3 form-sec">
+							<div class="heading-sec">
+								<div>
+									<h2 class="all_heading">Contact Us</h2>
+									<span class="underline-bg"></span>
+								</div>
+							</div>
+							<form>
+								<div class="form-group">
+									<label>Full Name</label>
+									<input type="text" class="form-control"  placeholder="Info">
+								</div>
+								<div class="form-group">
+									<label>Email</label>
+									<input type="email" class="form-control" placeholder="Please Enter Email">
+								</div>
+								<div class="form-group">
+									<label>Your Message</label>
+									<textarea class="form-control" placeholder="Please Enter Your Message"></textarea>
+								</div>
+								<button type="submit" class="btn quick-btn w-100">Submit</button>
+							</form>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3 address-sec">
+							<div class="heading-sec">
+								<div>
+									<h2 class="all_heading">Corporate Office</h2>
+									<span class="underline-bg"></span>
+								</div>
+							</div>
+							<p class="address-text"><span class="material-symbols-outlined">location_on</span> 2nd Floor, Shanti Plaza  Circular Road, Lalpur  Ranchi, Jharkhand – 834001  India</p>
+							<p class="address-text"><span class="material-symbols-outlined">call</span> +91 620**** 932</p>
+							<p class="address-text"><span class="material-symbols-outlined">mark_email_read</span> info.ranchi@digitalaiedu.org</p>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3 quick-sec">
+							<div class="heading-sec">
+								<div>
+									<h2 class="all_heading">Quick Links</h2>
+									<span class="underline-bg"></span>
+								</div>
+							</div>
+							<ul>
+							<li><a href="terms-conditions.html">Terms & Conditions</a></li>
+							<li><a href="privacy-policy.html">Privacy Policy</a></li>
+							<li><a href="copyright-policy.html">Copyright Policy</a></li>
+							<li><a href="help.html">Help</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3 chat-sec">
+							<div class="chat-box">
+								<button type="button" class="chat-btn"><span class="material-symbols-outlined">sms</span> How May I Help You</button>
+								<button type="button" class="download-btn"><span class="material-symbols-outlined">system_update_alt</span> Download Brochure</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="full-border"></div>
+				</div>
+				<div class="container">
+					<div class="row gy-3 footer-bottom">
+						<div class="col-sm-12 col-md-8 col-lg-8">
+							<p>Copyright © 2026 Stem Infinite. All Rights Reserved.</p>
+						</div>
+						<div class="col-sm-12 col-md-4 col-lg-4">
+							<ul class="social-media-sec">
+								<li>
+									<a href="#">
+										<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+											<path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z">
+											</path>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v9h4v-9h3l1-4h-4V6a1 1 0 0 1 1-1h3z"></path>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"></path>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/" target="_blank">
+										<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+											<path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5  1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.21 8.98h4.56V24H.21zM8.98 8.98h4.37v2.05h.06c.61-1.15 2.1-2.37 4.33-2.37 4.63 0 5.48 3.05 5.48 7.02V24h-4.56v-7.44c0-1.77-.03-4.05-2.47-4.05-2.47 0-2.85 1.93-2.85 3.92V24H8.98z"/>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer Section End -->
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<script src="js/jquery.easy-ticker.min.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/custom.js"></script>
+	<script>
+		// Phase tab switcher for the Structured Implementation Plan
+		document.addEventListener('DOMContentLoaded', function () {
+			var tabs = document.querySelectorAll('.phase-tab');
+			var panels = document.querySelectorAll('.phase-panel');
+			tabs.forEach(function (tab) {
+				tab.addEventListener('click', function () {
+					tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+					panels.forEach(function (p) { p.classList.remove('active'); });
+					tab.classList.add('active');
+					tab.setAttribute('aria-selected', 'true');
+					document.getElementById('phase-' + tab.dataset.phase).classList.add('active');
+				});
+			});
+		});
+	</script>
+
+</body>
+
+</html>
