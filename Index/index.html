@@ -12,6 +12,16 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/material-symbols-outlined.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<style>
+/* Custom lightweight testimonial scroller */
+.testimonial-content{position:relative;max-height:260px;overflow:auto;padding-right:8px;}
+.testimonial-content::-webkit-scrollbar{width:0;height:0}
+.testimonial-content{scrollbar-width:none;-ms-overflow-style:none}
+.testimonial-scroll-thumb{position:absolute;right:6px;top:0;width:6px;border-radius:6px;background:linear-gradient(180deg,#00b894,#0066cc);transition:opacity .18s,transform .05s;opacity:0}
+.testimonial-content:hover .testimonial-scroll-thumb{opacity:0.9}
+.disable-select{user-select:none;-webkit-user-select:none;-ms-user-select:none}
+	</style>
 </head>
 
 <body class="home-page">
@@ -22,7 +32,7 @@
 				<div class="row cust_row_header">
 					<div class="col-12 col-md-6 col-lg-2">
 						<div class="logo_box_cust top_logo_s" title="Logo">
-							<a href="index.html" title="Government of India">
+							<a href="index.html" title="Stem Infinite">
 								<img src="images/logo.svg" alt="Logo">
 								 
 							</a>
@@ -38,35 +48,23 @@
 											<button type="button" class="btn-close d-none" data-bs-dismiss="offcanvas"
 												aria-label="Close"></button>
 											<ul class="w-100 navbar-nav me-auto mb-2 mb-lg-0">
-												<li class="nav-item">
-													<a class="nav-link  home_menu_items active" aria-current="page"
-														href="index.html" role="button">Home</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link  home_menu_items" aria-current="page"
-														href="about-us.html" role="button">About Us</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link  home_menu_items" aria-current="page"
-														href="our-services.html" role="button">Our Services</a>
-												</li>
-											 
-												<li class="nav-item">
-													<a class="nav-link  home_menu_items" aria-current="page"
-														href="#" role="button">Events</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link  home_menu_items" aria-current="page"
-														href="contact.html" role="button">Contact Us</a>
-												</li>
-												<!-- <li class="nav-item dropdown">
-													<a class="nav-link  home_menu_items" aria-current="page"
-														href="#" role="button">Media <span class="material-symbols-outlined notranslate">expand_more</span></a>																	
-													<ul class="dropdown-menu dropdown_child_menu_cust">
-														<li><a class="dropdown-item" href="#">Photo </a></li>
-														<li><a class="dropdown-item" href="#">Video</a></li>
-													</ul>
-												</li> -->
+                                                <li class="nav-item">
+                                                    <a class="nav-link home_menu_items" aria-current="page" href="index.html" role="button">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link home_menu_items" aria-current="page" href="about-us.html" role="button">About Us</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link home_menu_items" aria-current="page" href="our-services.html" role="button">Our Services</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link home_menu_items" aria-current="page" href="events.html" role="button">Events</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link home_menu_items" aria-current="page" href="contact.html" role="button">Contact Us</a>
+                                                </li>
+                                            </ul>
+												</li> 
 											</ul>
 										</div>
 									</div>
@@ -74,7 +72,7 @@
 							</div>
 							<!-- Main Menu Section End -->
 							<div class="buttonsec">
-							<a href="#" class="btn quick-btn">Get Started</a>
+							<a href="javascript:void(0)" class="btn quick-btn">Get Started</a>
 							<a href="../Login/login.html" class="btn login-btn">Login</a>
 							</div>
 
@@ -109,9 +107,9 @@
 											</div>
 											<p>Transform classrooms into innovation hubs with hands-on learning, advanced labs, and future-ready technology solutions designed for next-generation education aligned with NEP 2020 Requirements.</p>
 											<div class="d-flex align-items-center gap-2">
-												<a href="#" class="btn quick-btn green-btn">Book a Free Dem</a>
-												<a href="#" class="btn quick-btn ">Partner with Us</a>
-												<a href="#" class="btn quick-btn green-btn">Download Company Profile</a>
+												<a href="javascript:void(0)" class="btn quick-btn green-btn">Book a Free Dem</a>
+												<a href="javascript:void(0)" class="btn quick-btn ">Partner with Us</a>
+												<a href="javascript:void(0)" class="btn quick-btn green-btn">Download Company Profile</a>
 											</div>
 										</div>
 										<div class="col-12 col-sm-12 col-md-5 col-lg-5">
@@ -129,8 +127,8 @@
 											</div>
 											<p>Transform classrooms into innovation hubs with hands-on learning, advanced labs, and future-ready technology solutions designed for next-generation education aligned with NEP 2020 Requirements.</p>
 											<div class="d-flex align-items-center gap-2">
-												<a href="#" class="btn quick-btn">Explore Our Solutions</a>
-												<a href="#" class="btn quick-btn green-btn">Partner with Us</a>
+												<a href="javascript:void(0)" class="btn quick-btn">Explore Our Solutions</a>
+												<a href="javascript:void(0)" class="btn quick-btn green-btn">Partner with Us</a>
 											</div>
 										</div>
 										<div class="col-12 col-sm-12 col-md-5 col-lg-5">
@@ -152,25 +150,25 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="counter-slider">
 							<div class="items_custom">
-								<a href="#">
+								<a href="javascript:void(0)">
 									<p class="counter">1500 </p>
 									<p class="title">Teachers Trained</p>
 								</a>
 							</div>
 							<div class="items_custom">
-								<a href="#">
+								<a href="javascript:void(0)">
 									<p class="counter">10000 </p>
 									<p class="title">Students Engaged</p>
 								</a>
 							</div>
 							<div class="items_custom titletag">
-								<a href="#">
+								<a href="javascript:void(0)">
 									<!-- <p class="counter">50000</p> -->
 									<p class="titletag">Multi-State <span class="titletag2">Deployments</span></p>
 								</a>
 							</div>
 							<div class="items_custom border-0">
-								<a href="#">
+								<a href="javascript:void(0)">
 								  <!-- <p class="counter">2</p>   -->
 									<p class="titletag">Focused T2 <span class="titletag2">Tier States</span></p>
 								</a>
@@ -191,13 +189,13 @@
 								<div class="img-sec">
 									<img src="images/about-video-1.png" alt="">
 								</div>
-								<a href="#" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
+								<a href="javascript:void(0)" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
 							</div>
 							<div class="card-sec video-card-trigger" data-video="images/vid_02.mp4" style="cursor:pointer;">
 								<div class="img-sec">
 									<img src="images/about-video-2.png" alt="">
 								</div>
-								<a href="#" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
+								<a href="javascript:void(0)" class="video-play" onclick="return false;"><span class="material-symbols-outlined">play_arrow</span></a>
 							</div>
 						</div>
 					</div>
@@ -293,25 +291,25 @@
 							<div class="tab-pane active" id="offering-labs">
 								<ul class="our-services-box">
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-1.svg" alt=""></span>
 											<p>STEM &amp; AI Lab – Hands-on science, robotics, and AI learning</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-2.svg" alt=""></span>
 											<p>ICT Lab – Digital literacy and technology integration</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-3.svg" alt=""></span>
 											<p>Innovation Lab – Creativity, design thinking, and prototyping</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-4.svg" alt=""></span>
 											<p>Early Foundation Lab – Activity-based learning for young learners</p>
 										</a>
@@ -321,31 +319,31 @@
 							<div class="tab-pane fade" id="offering-workshops">
 								<ul class="our-services-box">
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-1.svg" alt=""></span>
 											<p>Artificial Intelligence (AI)</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-2.svg" alt=""></span>
 											<p>Robotics &amp; Automation</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-3.svg" alt=""></span>
 											<p>Drone Technology</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-4.svg" alt=""></span>
 											<p>Rapid Prototyping</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-5.svg" alt=""></span>
 											<p>Coding Platforms: Arduino, Python, IoT</p>
 										</a>
@@ -355,37 +353,37 @@
 							<div class="tab-pane fade" id="offering-products">
 								<ul class="our-services-box">
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-1.svg" alt=""></span>
 											<p>Smart Boards &amp; Interactive Displays</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-2.svg" alt=""></span>
 											<p>Robotics &amp; AI Kits</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-3.svg" alt=""></span>
 											<p>Drone Kits</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-4.svg" alt=""></span>
 											<p>3D Printers</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-5.svg" alt=""></span>
 											<p>STEM Learning Kits</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-6.svg" alt=""></span>
 											<p>Arduino &amp; IoT Devices</p>
 										</a>
@@ -395,37 +393,37 @@
 							<div class="tab-pane fade" id="offering-digital">
 								<ul class="our-services-box">
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-1.svg" alt=""></span>
 											<p>Robotics &amp; AI</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-2.svg" alt=""></span>
 											<p>MIT-Based Learning Modules</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-3.svg" alt=""></span>
 											<p>3D Designing</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-4.svg" alt=""></span>
 											<p>Drone Technology</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-5.svg" alt=""></span>
 											<p>Arduino Programming</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="javascript:void(0)">
 											<span class="img-sec"><img src="images/our-services-6.svg" alt=""></span>
 											<p>Coding &amp; IoT</p>
 										</a>
@@ -434,7 +432,7 @@
 							</div>
 						</div>
 						<div class="d-flex align-items-center justify-content-center mt-4">
-							<a href="#" class="btn quick-btn">Download Brochure</a>
+							<a href="javascript:void(0)" class="btn quick-btn">Download Brochure</a>
 						</div>
 					</div>
 				</div>
@@ -501,7 +499,7 @@
 						<div class="impact-stats text-center">
 							<div class="row g-3 justify-content-center">
 								<div class="col-6  col-md-3 impact-item">
-									<a href="#" class="impact-box impact-1">
+									<a href="javascript:void(0)" class="impact-box impact-1">
 										<div class="impact-card d-flex align-items-center">
 											<div class="icon-wrap">
 												<div class="icon-circle"><span class="material-symbols-outlined">groups</span></div>
@@ -514,7 +512,7 @@
 									</a>
 								</div>
 							<div class="col-6  col-md-3 impact-item">
-									<a href="#" class="impact-box impact-2">
+									<a href="javascript:void(0)" class="impact-box impact-2">
 										<div class="impact-card d-flex align-items-center">
 											<div class="icon-wrap">
 												<div class="icon-circle"><span class="material-symbols-outlined">school</span></div>
@@ -527,7 +525,7 @@
 									</a>
 								</div>
 							<div class="col-6  col-md-3 impact-item">
-									<a href="#" class="impact-box impact-3">
+									<a href="javascript:void(0)" class="impact-box impact-3">
 										<div class="impact-card d-flex align-items-center">
 											<div class="icon-wrap">
 												<div class="icon-circle"><span class="material-symbols-outlined">engineering</span></div>
@@ -540,7 +538,7 @@
 									</a>
 								</div>
 								<div class="col-6  col-md-3 impact-item">
-									<a href="#" class="impact-box impact-4">
+									<a href="javascript:void(0)" class="impact-box impact-4">
 										<div class="impact-card d-flex align-items-center">
 											<div class="icon-wrap">
 												<div class="icon-circle"><span class="material-symbols-outlined">location_city</span></div>
@@ -574,7 +572,7 @@
 							</div>
 							<p>Creating Spaces to Connect, Learn, and Grow</p>
 							<div class="btn-sec mt-3">
-								<a href="#" class="btn quick-btn">View All</a>
+								<a href="javascript:void(0)" class="btn quick-btn">View All</a>
 								<div class="owl-nav">
 									<button type="button" class="owl-prev"><span class="material-symbols-outlined">arrow_left_alt</span></button>
 									<!-- <button type="button"><span class="material-symbols-outlined owl-pause1">pause</span></button> -->
@@ -591,7 +589,7 @@
 										<img src="images/events-engagements-1.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Student activities  <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Student activities  <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 								<div class="card-sec">
@@ -599,7 +597,7 @@
 										<img src="images/events-engagements-2.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Robotics sessions  <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Robotics sessions  <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 							</div>
@@ -609,7 +607,7 @@
 										<img src="images/events-engagements-3.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Coding classes  <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Coding classes  <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 								<div class="card-sec">
@@ -617,7 +615,7 @@
 										<img src="images/events-engagements-4.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Competitions <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Competitions <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 							</div>
@@ -627,7 +625,7 @@
 										<img src="images/events-engagements-3.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Teacher workshops  <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Teacher workshops  <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 								<div class="card-sec">
@@ -635,7 +633,7 @@
 										<img src="images/events-engagements-4.png" alt="">
 									</div>
 									<div class="desc-sec">
-										<a href="#">Innovation projects <span class="material-symbols-outlined">trending_flat</span></a>
+										<a href="javascript:void(0)">Innovation projects <span class="material-symbols-outlined">trending_flat</span></a>
 									</div>
 								</div>
 							</div>
@@ -654,7 +652,7 @@
 						<div class="card-sec">
 							<div class="img-sec">
 								<img src="images/clients-impact-left.png" alt="">
-								<a href="#" class="video-play"><span class="material-symbols-outlined">play_arrow</span></a>
+								<a href="javascript:void(0)" class="video-play"><span class="material-symbols-outlined">play_arrow</span></a>
 							</div>
 						</div>
 					</div>
@@ -668,28 +666,31 @@
 							</div>
 							<div id="clients-impact-slider" class="owl-carousel owl-theme testimonials-box">
 								<div class="testimonials-slider">
-									<p>“The STEM and Robotics program conducted by STEM Infinite Innovation has created a very positive learning environment in our school. Students eagerly participate in activities and enjoy learning through experiments and projects.</p>
-									<p>The training methodology is highly interactive and student-friendly. Teachers also received excellent guidance, making classroom execution smooth and sustainable. We are happy to see students developing innovation skills and real-world thinking at an early stage.”</p>
-									<hr>
-									<div class="user-sec">
-										<div class="img-sec">
-											<img src="images/clients-impact-user.png" alt="">
-										</div>
-										<div class="desc-sec">
-											<p class="name">Saint Augustine School</p>
-											<div class="star">
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
+									<div class="testimonial-content" style="max-height:260px;overflow:auto;padding-right:8px;">
+										<p>“The STEM and Robotics program conducted by STEM Infinite Innovation has created a very positive learning environment in our school. Students eagerly participate in activities and enjoy learning through experiments and projects.</p>
+										<p>The training methodology is highly interactive and student-friendly. Teachers also received excellent guidance, making classroom execution smooth and sustainable. We are happy to see students developing innovation skills and real-world thinking at an early stage.”</p>
+										<hr>
+										<div class="user-sec">
+											<div class="img-sec">
+												<img src="images/clients-impact-user.png" alt="">
+											</div>
+											<div class="desc-sec">
+												<p class="name">Saint Augustine School</p>
+												<div class="star">
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="testimonials-slider">
+									<div class="testimonial-content" style="max-height:260px;overflow:auto;padding-right:8px;">
 									<p>“STEM Infinite Innovation has brought a fresh and practical approach to learning in our school. Students are now more engaged, curious, and confident while working on robotics and STEM activities. The hands-on sessions have helped improve creativity, teamwork, and problem-solving skills among students.</p>
-									What impressed us most was the teacher support and smooth classroom implementation. The program is well-structured, NEP-aligned, and truly future-focused. We appreciate the dedication and continuous support provided by the STEM Infinite Innovation team.”
+									<p>What impressed us most was the teacher support and smooth classroom implementation. The program is well-structured, NEP-aligned, and truly future-focused. We appreciate the dedication and continuous support provided by the STEM Infinite Innovation team.”</p>
 									<hr>
 									<div class="user-sec">
 										<div class="img-sec">
@@ -706,11 +707,13 @@
 											</div>
 										</div>
 									</div>
+									</div>
 								</div>
 
 								<div class="testimonials-slider">
+									<div class="testimonial-content" style="max-height:260px;overflow:auto;padding-right:8px;">
 									<p>STEM Infinite Innovation has successfully transformed STEM learning into an exciting and meaningful experience for our students. The sessions are engaging, practical, and aligned with modern educational needs</p>
-								<p>The team demonstrated professionalism, strong academic planning, and excellent on-ground execution throughout the program. Students have shown noticeable improvement in confidence, creativity, and logical thinking. We look forward to continuing this valuable partnership.”</p>
+									<p>The team demonstrated professionalism, strong academic planning, and excellent on-ground execution throughout the program. Students have shown noticeable improvement in confidence, creativity, and logical thinking. We look forward to continuing this valuable partnership.”</p>
 									<div class="user-sec">
 										<div class="img-sec">
 											<img src="images/clients-impact-user.png" alt="">
@@ -725,31 +728,34 @@
 												<span class="material-symbols-outlined">star</span>
 											</div>
 										</div>
+										</div>
 									</div>
 								</div>
 
 									<div class="testimonials-slider">
-									<p>“Our experience with STEM Infinite Innovation has been extremely positive. The STEM lab activities and robotics sessions have encouraged students to think innovatively and learn by doing.</p>
-								<p>The structured curriculum, teacher mentoring, and continuous support provided by the team ensured successful implementation in the school. The program has added significant value to our academic environment and student learning experience.”</p>
-									<div class="user-sec">
-										<div class="img-sec">
-											<img src="images/clients-impact-user.png" alt="">
-										</div>
-										<div class="desc-sec">
-											<p class="name">KH Memorial School</p>
-											<div class="star">
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
-												<span class="material-symbols-outlined">star</span>
+										<div class="testimonial-content" style="max-height:260px;overflow:auto;padding-right:8px;">
+										<p>“Our experience with STEM Infinite Innovation has been extremely positive. The STEM lab activities and robotics sessions have encouraged students to think innovatively and learn by doing.</p>
+										<p>The structured curriculum, teacher mentoring, and continuous support provided by the team ensured successful implementation in the school. The program has added significant value to our academic environment and student learning experience.”</p>
+										<div class="user-sec">
+											<div class="img-sec">
+												<img src="images/clients-impact-user.png" alt="">
+											</div>
+											<div class="desc-sec">
+												<p class="name">KH Memorial School</p>
+												<div class="star">
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+													<span class="material-symbols-outlined">star</span>
+												</div>
+											</div>
 											</div>
 										</div>
 									</div>
-								</div>
 							</div>
 							<div class="btn-sec mt-5">
-								<a href="#" class="btn quick-btn">View All</a>
+								<a href="javascript:void(0)" class="btn quick-btn">View All</a>
 								<div class="owl-nav">
 									<button type="button" class="owl-prev2"><span class="material-symbols-outlined">arrow_left_alt</span></button>
 									<!-- <button type="button"><span class="material-symbols-outlined owl-pause2">pause</span></button> -->
@@ -784,38 +790,38 @@
 						<div class="tab-content">
 							<div class="tab-pane fade" id="menu-a">
 								<div id="gov-logo-slider1" class="owl-carousel owl-theme">
-									<a href="#"><img src="images/gov-logo-1.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-2.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-3.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-4.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-5.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-1.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-2.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-3.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-4.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-5.png" alt=""></a>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="menu-b">
 								<div id="gov-logo-slider2" class="owl-carousel owl-theme">
-									<a href="#"><img src="images/gov-logo-1.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-2.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-3.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-4.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-5.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-1.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-2.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-3.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-4.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-5.png" alt=""></a>
 								</div>
 							</div>
 							<div class="tab-pane active" id="menu-c">
 								<div id="gov-logo-slider3" class="owl-carousel owl-theme">
-									<a href="#"><img src="images/gov-logo-1.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-2.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-3.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-4.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-5.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-1.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-2.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-3.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-4.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-5.png" alt=""></a>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="menu-d">
 								<div id="gov-logo-slider4" class="owl-carousel owl-theme">
-									<a href="#"><img src="images/gov-logo-1.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-2.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-3.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-4.png" alt=""></a>
-									<a href="#"><img src="images/gov-logo-5.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-1.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-2.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-3.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-4.png" alt=""></a>
+									<a href="javascript:void(0)"><img src="images/gov-logo-5.png" alt=""></a>
 								</div>
 							</div>
 						</div>						
@@ -837,10 +843,10 @@
 					</div>
 					<div class="col-12 col-sm-12 col-md-9 col-lg-9">
 						<ul class="location_icon">
-							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Ranchi</a></li>
-							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Bangalore</a></li>
-							<li><a href="#"><span class="material-symbols-outlined">location_on</span> West Bengal</a></li>
-							<li><a href="#"><span class="material-symbols-outlined">location_on</span> Chhattisgarh</a></li>
+							<li><a href="javascript:void(0)"><span class="material-symbols-outlined">location_on</span> Ranchi</a></li>
+							<li><a href="javascript:void(0)"><span class="material-symbols-outlined">location_on</span> Bangalore</a></li>
+							<li><a href="javascript:void(0)"><span class="material-symbols-outlined">location_on</span> West Bengal</a></li>
+							<li><a href="javascript:void(0)"><span class="material-symbols-outlined">location_on</span> Chhattisgarh</a></li>
 						</ul>
 					</div>
 				</div>
@@ -883,8 +889,8 @@
 								</div>
 							</div>
 							<p class="address-text"><span class="material-symbols-outlined">location_on</span> 2nd Floor, Shanti Plaza  Circular Road, Lalpur  Ranchi, Jharkhand – 834001  India</p>
-							<p class="address-text"><span class="material-symbols-outlined">call</span> +91 620**** 932</p>
-							<p class="address-text"><span class="material-symbols-outlined">mark_email_read</span> info.ranchi@digitalaiedu.org</p>
+							<p class="address-text"><span class="material-symbols-outlined">call</span> <a href="tel:+91620932">+91 620**** 932</a></p>
+							<p class="address-text"><span class="material-symbols-outlined">mark_email_read</span> <a href="mailto:info@steminfiniteinnovation.com">info@steminfiniteinnovation.com</a></p>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3 quick-sec">
 							<div class="heading-sec">
@@ -919,7 +925,7 @@
 						<div class="col-sm-12 col-md-4 col-lg-4">
 							<ul class="social-media-sec">
 								<li>
-									<a href="#">
+									<a href="javascript:void(0)">
 										<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
 											<path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z">
 											</path>
@@ -927,14 +933,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="javascript:void(0)">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v9h4v-9h3l1-4h-4V6a1 1 0 0 1 1-1h3z"></path>
 										</svg>
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="javascript:void(0)">
 										<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 											<path fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"></path>
 										</svg>
@@ -1060,6 +1066,57 @@
 			document.addEventListener('DOMContentLoaded', function() {
 				setTimeout(animateCounters, 500);
 			});
+
+			// Custom testimonial scroller: creates a slim draggable thumb and syncs it with scroll
+			(function(){
+				function initScroller(container){
+					const thumb = document.createElement('div');
+					thumb.className = 'testimonial-scroll-thumb';
+					container.appendChild(thumb);
+
+					function updateThumb(){
+						const h = container.clientHeight;
+						const scrollH = container.scrollHeight;
+						if(scrollH <= h){
+							thumb.style.opacity = '0';
+							return;
+						}
+						const ratio = h / scrollH;
+						const thumbH = Math.max(Math.round(ratio * h), 24);
+						thumb.style.height = thumbH + 'px';
+						const maxTop = h - thumbH;
+						const top = (container.scrollTop / (scrollH - h)) * maxTop;
+						thumb.style.transform = 'translateY(' + top + 'px)';
+						thumb.style.opacity = '0.9';
+					}
+
+					let dragging = false, startY = 0, startTop = 0;
+					thumb.addEventListener('mousedown', function(e){
+						dragging = true; startY = e.clientY;
+						const t = thumb.style.transform.match(/translateY\(([-\d.]+)px\)/);
+						startTop = t ? parseFloat(t[1]) : 0;
+						document.body.classList.add('disable-select');
+						e.preventDefault();
+					});
+					document.addEventListener('mousemove', function(e){
+						if(!dragging) return;
+						const delta = e.clientY - startY;
+						const h = container.clientHeight; const scrollH = container.scrollHeight;
+						const thumbH = thumb.clientHeight; const maxTop = h - thumbH;
+						let newTop = Math.min(Math.max(startTop + delta, 0), maxTop);
+						const newScroll = (newTop / maxTop) * (scrollH - h);
+						container.scrollTop = newScroll;
+					});
+					document.addEventListener('mouseup', function(){ if(dragging){ dragging=false; document.body.classList.remove('disable-select'); } });
+
+					container.addEventListener('scroll', updateThumb);
+					window.addEventListener('resize', updateThumb);
+					// init
+					setTimeout(updateThumb, 50);
+				}
+
+				document.querySelectorAll('.testimonial-content').forEach(function(el){ initScroller(el); });
+			})();
 	</script>
 
 </body>
