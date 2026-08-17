@@ -98,7 +98,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-						<div id="demo" class="carousel slide">
+						<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="hover" data-bs-touch="true" aria-label="Featured education solutions">
+							<div class="carousel-indicators hero-carousel-indicators">
+								<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Show STREAM learning slide"></button>
+								<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Show robotics and AI labs slide"></button>
+								<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Show teacher training slide"></button>
+							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active">
 									<div class="row gy-3">
@@ -121,7 +126,36 @@
 										</div>
 									</div>
 								</div>
-							</div>				
+								<div class="carousel-item">
+									<div class="hero-labs-slide">
+										<h2 class="hero-labs-title">Labs offering</h2>
+										<h3>Future-Ready Schools Start Here</h3>
+										<p>Establish an AI &amp; Robotics Lab that inspires innovation, enhances learning outcomes, and prepares<br class="d-none d-lg-block"> students for tomorrow's careers</p>
+										<div class="hero-labs-grid">
+											<article class="hero-lab-card hero-lab-stem"><div class="hero-lab-image"><img src="images/events-engagements-1.png" alt="Students participating in hands-on STEM activities"></div><h4>STEM Lab</h4></article>
+											<article class="hero-lab-card hero-lab-robotics"><div class="hero-lab-image"><img src="images/our-courses-2.png" alt="Student exploring robotics and artificial intelligence"></div><h4>Robotics Lab</h4></article>
+											<article class="hero-lab-card hero-lab-coding"><div class="hero-lab-image"><img src="images/events-engagements-3.png" alt="Students collaborating in an AI and coding lab"></div><h4>AI &amp; Coding Lab</h4></article>
+											<article class="hero-lab-card hero-lab-iot"><div class="hero-lab-image"><img src="images/events-engagements-4.png" alt="Students presenting their AI and IoT projects"></div><h4>AI &amp; IoT Lab</h4></article>
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="row gy-3">
+										<div class="col-12 col-sm-12 col-md-7 col-lg-7 banner-details">
+											<p class="hero-eyebrow"><span class="material-symbols-outlined" aria-hidden="true">school</span> Empowering Educators. Inspiring Students.</p>
+											<div class="heading-sec"><div><h2 class="all_heading">Transform Teaching with<br><span>Hands-On Skill Programs</span></h2></div></div>
+											<p>Support teachers with practical training and give students meaningful workshops in coding, automation, design thinking, and emerging technologies.</p>
+											<div class="hero-actions">
+												<a href="#" class="btn hero-btn hero-btn-primary"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>Book a Workshop</a>
+												<a href="#" class="btn hero-btn hero-btn-outline"><span class="material-symbols-outlined" aria-hidden="true">download</span>Download Profile</a>
+											</div>
+										</div>
+										<div class="col-12 col-sm-12 col-md-5 col-lg-5"><img src="images/events-engagements-4.png" alt="Students and educators taking part in a practical technology workshop" class="d-block hero-visual hero-visual-card"></div>
+									</div>
+								</div>
+							</div>
+							<button class="carousel-control-prev hero-carousel-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span class="visually-hidden">Previous slide</span></button>
+							<button class="carousel-control-next hero-carousel-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span><span class="visually-hidden">Next slide</span></button>
 						</div>
 					</div>
 				</div>
@@ -164,36 +198,6 @@
 			</div>
 		</div>
 		<!-- Counter Section End -->
-		<!-- Labs Offering Section Start -->
-		<section class="labs-offering-sec" aria-labelledby="labs-offering-title">
-			<div class="labs-decor" aria-hidden="true"></div>
-			<div class="container">
-				<div class="labs-offering-content">
-					<h2 id="labs-offering-title" class="labs-section-title">Labs offering</h2>
-					<h3>Future-Ready Schools Start Here</h3>
-					<p class="labs-intro">Establish an AI &amp; Robotics Lab that inspires innovation, enhances learning outcomes, and prepares students for tomorrow's careers</p>
-					<div class="labs-grid">
-						<article class="lab-card lab-card-stem">
-							<div class="lab-image"><img src="images/events-engagements-1.png" alt="Students participating in hands-on STEM activities"></div>
-							<h4>STEM Lab</h4>
-						</article>
-						<article class="lab-card lab-card-robotics">
-							<div class="lab-image"><img src="images/our-courses-2.png" alt="Students exploring robotics technology"></div>
-							<h4>Robotics Lab</h4>
-						</article>
-						<article class="lab-card lab-card-coding">
-							<div class="lab-image"><img src="images/events-engagements-3.png" alt="Students collaborating in an AI and coding lab"></div>
-							<h4>AI &amp; Coding Lab</h4>
-						</article>
-						<article class="lab-card lab-card-iot">
-							<div class="lab-image"><img src="images/events-engagements-4.png" alt="Students building an AI and IoT project"></div>
-							<h4>AI &amp; IoT Lab</h4>
-						</article>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Labs Offering Section End -->
 		<!-- About Us Section Start -->
 		<div class="about-sec" id="skip_content">
 			<div class="container">
@@ -863,7 +867,7 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-3 col-lg-3 heading-bg">
 						<div class="heading-sec">
-							<div>
+							<div class="locations">
 								<span class="material-symbols-outlined location-title-icon">location_on</span>
 								<div><h2 class="all_heading text-white m-0">Office Locations</h2><p>We are present across India<br>to serve you better</p></div>
 							</div>						
@@ -882,38 +886,36 @@
 		</div>
 		<!-- Office Locations Section End -->
 		<!-- Footer Section Start -->
-		<footer>
+		<footer class="site-footer">
 			<div class="footer-sec">
 				<div class="container">
 					<div class="row gy-3 footer-top">
 						<div class="col-sm-12 col-md-3 col-lg-3 form-sec">
 							<div class="heading-sec">
 								<div>
-									<h2 class="all_heading"><span class="material-symbols-outlined">chat</span> Contact Us</h2>
-									<span class="underline-bg"></span>
+									<h2 class="all_heading">Contact US</h2>
 								</div>
 							</div>
 							<form>
 								<div class="form-group">
 									<label>Full Name</label>
-									<input type="text" class="form-control" placeholder="Enter your full name" required>
+									<input type="text" class="form-control" placeholder="Info" required>
 								</div>
 								<div class="form-group">
 									<label>Email</label>
-									<input type="email" class="form-control" placeholder="Enter your email" required>
+									<input type="email" class="form-control" placeholder="Please Enter Email" required>
 								</div>
 								<div class="form-group">
 									<label>Your Message</label>
-									<textarea class="form-control" placeholder="Type your message here..." required></textarea>
+									<textarea class="form-control" placeholder="Please Enter Your Message" required></textarea>
 								</div>
-								<button type="submit" class="btn quick-btn w-100"><span class="material-symbols-outlined">send</span> Send Message</button>
+								<button type="submit" class="btn quick-btn w-100">Submit</button>
 							</form>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3 address-sec">
 							<div class="heading-sec">
 								<div>
-									<h2 class="all_heading"><span class="material-symbols-outlined">apartment</span> Corporate Office</h2>
-									<span class="underline-bg"></span>
+									<h2 class="all_heading">Corporate Office</h2>
 								</div>
 							</div>
 							<p class="address-text"><span class="material-symbols-outlined">location_on</span> 2nd Floor, Shanti Plaza  Circular Road, Lalpur  Ranchi, Jharkhand – 834001  India</p>
@@ -923,25 +925,21 @@
 						<div class="col-sm-12 col-md-3 col-lg-3 quick-sec">
 							<div class="heading-sec">
 								<div>
-									<h2 class="all_heading"><span class="material-symbols-outlined">link</span> Quick Links</h2>
-									<span class="underline-bg"></span>
+									<h2 class="all_heading">Quick Links</h2>
 								</div>
 							</div>
 							<ul>
-								<li><a href="#"><span>›</span> Terms &amp; Conditions</a></li>
-								<li><a href="#"><span>›</span> Privacy Policy</a></li>
-								<li><a href="#"><span>›</span> Copyright Policy</a></li>
-								<li><a href="#"><span>›</span> Help</a></li>
+								<li><a href="#">Terms &amp; Conditions</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Copyright Policy</a></li>
+								<li><a href="#">Help</a></li>
 							</ul>
 						</div>					
 						<div class="col-sm-12 col-md-3 col-lg-3 chat-sec">
 							<div class="chat-box">
 								<button type="button" class="chat-btn"><span class="material-symbols-outlined">sms</span><strong>How May I Help You</strong><span class="material-symbols-outlined action-arrow">arrow_forward</span></button>
 								<button type="button" class="download-btn"><span class="material-symbols-outlined">download</span><strong>Download Brochure</strong><span class="material-symbols-outlined action-arrow">arrow_forward</span></button>
-								<h2 class="footer-follow-title">Follow Us</h2>
-								<ul class="social-media-sec footer-social">
-									<li><a href="#" aria-label="Facebook">f</a></li><li><a href="#" aria-label="Instagram">◎</a></li><li><a href="#" aria-label="YouTube">▶</a></li><li><a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">in</a></li>
-								</ul>
+								<button type="button" class="faq-btn"><span class="material-symbols-outlined">forum</span><strong>FAQ</strong><span class="material-symbols-outlined action-arrow">arrow_forward</span></button>
 							</div>
 						</div>						
 					</div>
