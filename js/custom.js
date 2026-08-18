@@ -250,3 +250,46 @@ jQuery(document).ready(function () {
   });
 });
 /* Gov Logo Section JS End */
+
+/* Keep the main navigation active state in sync across every page. */
+document.addEventListener('DOMContentLoaded', function () {
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main_menu .home_menu_items'));
+  if (!navLinks.length) return;
+
+  var currentPage = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
+  var pageMap = {
+    'index.html': 'index.html',
+    'about-us.html': 'about-us.html',
+    'our-services.html': 'our-services.html',
+    'service-detail.html': 'our-services.html',
+    'event.html': 'event.html',
+    'contact.html': 'contact.html'
+  };
+
+  function setActiveNavigation(clickedHref) {
+    var activeHref = clickedHref || pageMap[currentPage] || '';
+    if (window.location.hash === '#contact-us') activeHref = 'contact.html';
+
+    navLinks.forEach(function (link) {
+      var isActive = link.getAttribute('href') === activeHref;
+      link.classList.toggle('active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      setActiveNavigation(link.getAttribute('href'));
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    setActiveNavigation();
+  });
+
+  setActiveNavigation();
+});
